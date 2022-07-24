@@ -96,6 +96,7 @@
                             <h2 class="page-title">
                                 Design Proposal dashboard
                             </h2>
+                            <span id="proposal_create_hash_display"></span>
                         </div>
                         <!-- Page title actions -->
                         <div class="col-12 col-md-auto ms-auto d-print-none">
@@ -119,6 +120,7 @@
           <div class="container-xl">
             <div class="row row-cards" data-masonry='{"percentPosition": true }'>
               <div class="col-sm-6 col-lg-4">
+                
                 <div class="card">
                   <div class="card-body p-0">
                     <div class="card-table table-responsive">
@@ -390,12 +392,12 @@
                                 </div>
                                 <div class="col-9">
                                     <div class="card-body">
-                                        <h3 class="card-title"><span id="proposal_name"></h3>
+                                        <h3 class="card-title"><span id="proposal_title_display"></h3>
                           <table>
                             <tr>
                               <td><a id="background_data" href="">Background Data</a></td><td>Visibility :<span id="visibility"></span></td>
-                                            <td>Prime Author: <span id="prime_author"></span></td>
-                                            <td>Target Submission Date: <span id="target_submission_data"></span></td>
+                                            <td>Proposal Owner: <span id="proposal_owner_display"></span></td>
+                                            <td>Target Submission Date: <span id="target_submission_date_display"></span></td>
                                             </tr>
                                             <tr>
                                                 <td>Vote Cycle: <span id="vote_cycle"></span></td>
@@ -670,7 +672,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Funding Amount</label>
-                                <input id="target_proposal_funding_amount" type="text" class="form-control">
+                                <input id="target_proposal_funding_amount_field" type="text" class="form-control">
                             </div>
                         </div>
 
@@ -706,6 +708,7 @@
     <script src="abi/i_section_abi.js"></script>
     <script src="js/autoconnect.js"></script>
     <script>
+         // proposal manage
         const proposalListTable      = ge("proposal_list_table");
         const draftProposalInfoCard  = ge("draft_proposal_info_card");
         const addProposalSpan        = ge("add_proposal_span");
@@ -715,19 +718,307 @@
         const addSectionApproveButton = ge("add_section_approve_button");
         const addSectionButton       = ge("add_section_button");
 
-        const backgroundDataField   = ge("background_data_url");
-        const proposalDraftVisibilityField = ge("proposal_draft_visibility_field");
-        const proposalOwnerField = ge("proposal_owner_name_field");
-        const targetSubmissionDateField = ge("target_submission_date_field");
-        const pproposalVoteCycleField = ge("proposal_section_vote_cycle_field");
-        const voteStakePriceField = ge("vote_stake_price_field");
-        const proposalImageField = ge("proposal_image_field");
-        const targetProposalFundingAmount = ge("target_proposal_funding_amount");
-        const additionalInformation = ge("additional_information");
-        const createReportButton = ge("create_report_button");
+        // proposal create
+        const proposalNameField             = ge("proposal_name_field");
+        const proposalCurrencyField         = ge("proposal_currency_field");
+        const backgroundDataField           = ge("background_data_url_field");
+        const proposalDraftVisibilityField  = ge("proposal_draft_visibility_field");
+        const proposalOwnerField            = ge("proposal_owner_name_field");
+        const targetSubmissionDateField     = ge("target_submission_date_field");
+        const pproposalVoteCycleField       = ge("proposal_section_vote_cycle_field");
+        const voteStakePriceField           = ge("vote_stake_price_field");
+        const proposalImageField            = ge("proposal_image_field");
+        const proposedFundingAmountField = ge("target_proposal_funding_amount_field");
+        const additionalInformation         = ge("additional_information");
+        const createReportButton            = ge("create_report_button");
+        
+        const displayProposalCreateHash     = ge("proposal_create_hash_display");
+
+        // proposal display
+        const proposalTitleSpan       = ge("proposal_title_display");
+        const backgroundDataDisplay   = ge("background_data_url_display");
+        const proposalDraftVisibilityDisplay = ge("proposal_draft_visibility_display");
+        const proposalOwnerDisplay = ge("proposal_owner_name_display");
+        const targetSubmissionDateDisplay = ge("target_submission_date_display");
+        const pproposalVoteCycleDisplay = ge("proposal_section_vote_cycle_display");
+        const voteStakePriceDisplay = ge("vote_stake_price_display");
+        const proposalImageDisplay = ge("proposal_image_display");
+        const targetProposalFundingAmountDisplay = ge("target_proposal_funding_amount_display");
+        const additionalInformationDisplay = ge("additional_information_display");
+        
+
+        const iDesignProposalAddress = "0xBE8910c2ED03A7f96A1e6AEd157282718a3a9e86";
+        const iDesignProposalContract = new web3.eth.Contract(iDesignProposalAbi, iDesignProposalAddress);
+
+        var selectedProposalContract;
+
+        async function configureCoreContracts() { 
+            iDesignProposalContract.methods.getProposals().call({from : account})
+            .then(function(response){
+                proposalListTable.tbody.innerHtml = "";
+                console.log(response);
+                var proposalAddresses = response; 
+                for(var x = 0; x < proposals.length; x++) {
+                    var proposalAddress = proposalAddresses[x];
+                    addDisplayRow(proposalAddress);
+                }
+            })
+            .catch(function(err){
+                console.log(err);
+            })
+        }
+
+        function addDisplayRow(proposalAddress) {
+            
+            var iProposalContract = new web3.eth.Contract(iProposalAbi); 
+
+            var row = proposalListTable.tbody.insertRow(); 
+
+            var imageCell = row.insertCell();
+            addClassToElement(imageCell, "w-1");
+            var imageSpan = ce("span");
+            addClassToElement(imageSpan, "avatar avatar-sm");
+            iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE").call({from : account})
+            .then(function(response){
+                console.log(response);
+                imageSpan.setAttribute("style", "background-image: url(http://ipfs.io/ipfs/"+response+")");
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+
+            var titleCell = row.insertCell();
+            addClassToElement(titleCell,"td-truncate" );
+            var div = ce("div");
+            addClassToElement(div, "text-truncate");
+            titleCell.append(div);
+            iProposalContract.methods.getTitle().call({from : account})
+            .then(function(response){
+                console.log(response);
+                div.append(text(response));
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+            
+            var targetSubmitDateCell = row.insertCell(); 
+            addClassToElement(targetSubmitDateCell, "text-nowrap text-muted");
+            iProposalContract.methods.getPropertyUINT("PROPOSAL_TARGET_SUBMISSION_DATE").call({from : account})
+            .then(function(response){
+                console.log(response);
+                targetSubmitDate.append(text(response));
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+        }
+
+        var arrived = false; 
+
+        function createDraftProposal() { 
+            var ipfsPropertyNames = ["PROPOSAL_ADDITIONAL_INFORMATION","PROPOSAL_IMAGE","PROPOSAL_VISIBILITY"];
+            let ipfsPropertyValues = new Array(3);
+            ipfsPropertyValues[3] = proposalDraftVisibilityField.value; 
+
+            var uintPropertyNames = ["SECTION_VOTE_CYCLE", "SECTION_VOTE_STAKE_PRICE", "PROPOSED_FUNDING_AMOUNT"];
+            var uintPropertyValues = new Array(4);
+            uintPropertyValues[0] = pproposalVoteCycleField.value; 
+            uintPropertyValues[1] = voteStakePriceField.value; 
+            uintPropertyValues[2] = proposedFundingAmountField.value;             
+
+            var owner = account; 
+            var title = proposalNameField.value; 
+            var backgroundDataLink = backgroundDataField.value; 
+            var currencyAddress = proposalCurrencyField.value; 
+            var targetSubmissionDate = targetSubmissionDateField.value; 
+
+            ipfs.add(additionalInformation.value)
+            .then(function(response){
+                console.log(response);
+                ipfsPropertyValues[0] = response[0].hash;
+               
+                ipfs.add(proposalImageField.files[0])
+                .then(function(response){
+                    console.log(response);
+                    ipfsPropertyValues[1] = response[0].hash; 
+                    
+                    create(owner, title, targetSubmissionDate, 
+                                                            backgroundDataLink, currencyAddress, 
+                                                            ipfsPropertyNames, ipfsPropertyValues, 
+                                                            uintPropertyNames, uintPropertyValues); 
+                })
+                .catch(function(err){
+                    console.log(err);
+                });
+
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+        }
+
+        function loadProposal(proposalAddress) {
 
 
-        // Design proposal 0xBE8910c2ED03A7f96A1e6AEd157282718a3a9e86
+
+        }
+
+        function create(owner, title, targetSubmissionDate, 
+                                                            backgroundDataLink, currencyAddress, 
+                                                            ipfsPropertyNames, ipfsPropertyValues, 
+                                                            uintPropertyNames, uintPropertyValues) {
+            iDesignProposalContract.methods.createProposal( owner, title, targetSubmissionDate, 
+                                                            backgroundDataLink, currencyAddress, 
+                                                            ipfsPropertyNames, ipfsPropertyValues, 
+                                                            uintPropertyNames, uintPropertyValues).send({from : account})
+                                .then(function(response){
+                                    console.log(response);
+                                    displayProposalCreateHash.innerHTML = "PROPOSAL CREATED: " + response.blockHash;
+                                })
+                                .catch(function(err){
+                                    console.log(err);
+                                })
+
+        }
+
+        function addClassToElement(cell, cls) {
+            cell.setAttribute("class", cls);
+        }
+
+        function loadProposal(proposalAddress) {
+            selectedProposalContract = new web3.eth.Contract(iProposalAbi, proposalAddress);
+           
+           selectedProposalContract.methods.getTitle().call({from : account})
+           .then(function(response){
+                console.log(response);
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+           selectedProposalContract.methods.getTargetSubmissionDate().call({from : account})
+           .then(function(response){
+                console.log(response);
+                targetSubmissionDateDisplay.innerHTML = response;
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+           selectedProposalContract.methods.getOwner().call({from : account})
+           .then(function(response){
+                console.log(response);
+                proposalOwnerDisplay.innerHTML = response;
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+           selectedProposalContract.methods.getBackgroundDataLink().call({from : account})
+           .then(function(response){
+                console.log(response);
+                backgroundDataDisplay.innerHTML = response;   
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+           selectedProposalContract.methods.getPropertyIPFS("PROPOSAL_VISIBILITY").call({from : account})
+           .then(function(response){
+                console.log(response);
+                proposalDraftVisibilityDisplay.innerHTML = response;
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+           selectedProposalContract.methods.getCurrencyAddress().call({from : account})
+           .then(function(response){
+                console.log(response);
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+           selectedProposalContract.methods.getPropertyUINT().call({from : account})
+           .then(function(response){
+                console.log(response);
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+           selectedProposalContract.methods.getSections().call({from : account})
+           .then(function(response){
+                console.log(response);
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+  
+            
+            
+            
+            targetSubmissionDateDisplay.innerHTML = "";
+            proposalVoteCycleDisplay.innerHTML = "";
+            voteStakePriceDisplay.innerHTML = "";
+            proposalImageDisplay.innerHTML = "";
+            targetProposalFundingAmountDisplay.innerHTML = "";  
+            additionalInformationDisplay.innerHTML = "";
+
+        }
+
+        function addSection(){ 
+            iProposalContract 
+        }
+        const form = new FormData();
+
+const options = {
+    method: 'POST',
+    body: form,
+    headers: {
+        "Authorization": "222b05ce-c37f-4bdd-b40e-2a94f3efa570",
+    },
+
+};
+const mintResponse = document.getElementById("mint_result");
+
+
+
+async function mintSectionNFT(mintAddress, user, sectionContent, sectionTitle) {
+    console.log("minting" + mintAddress + " " + user + " " + text);
+    let blob = new Blob([sectionContent], {
+        type: 'text/plain'
+    });
+    console.log("sectionContent: " + blob.value);
+    form.append('file', blob);
+
+    await fetch("https://api.nftport.xyz/v0/mints/easy/files?" + new URLSearchParams({
+            chain: 'rinkeby',
+            name: "Proposal Section By " + user,
+            description: sectionTitle,
+            mint_to_address: mintAddress,
+        }), options)
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(responseJson) {
+            // Handle the response
+            console.log(responseJson.transaction_external_url);
+
+            var date = new Date();
+            const options = {
+                timeZone: "GMT",
+                year: "numeric",
+                month: "numeric",
+                day: "numeric",
+                hour12: false,
+                hour: "numeric",
+                minute: "numeric",
+                seconds: "numeric"
+            }
+            var localized = date.toLocaleDateString("en-UK", options);
+            console.log(responseJson);  
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+            console.log("minted");
+    }
+
 
         function text(txt) {
             return document.createTextNode(txt);
