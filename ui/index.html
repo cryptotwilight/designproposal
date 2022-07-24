@@ -927,6 +927,14 @@
            .catch(function(err){
                 console.log(err);
            });
+           selectedProposalContract.methods.getPropertyIPFS("PROPOSAL_ADDITIONAL_INFORMATION").call({from : account})
+           .then(function(response){
+                console.log(response);
+                additionalInformationDisplay.innerHTML = response;
+           })
+           .catch(function(err){
+                console.log(err);
+           });
            selectedProposalContract.methods.getCurrencyAddress().call({from : account})
            .then(function(response){
                 console.log(response);
@@ -934,9 +942,27 @@
            .catch(function(err){
                 console.log(err);
            });
-           selectedProposalContract.methods.getPropertyUINT().call({from : account})
+           selectedProposalContract.methods.getPropertyUINT("SECTION_CYCLE_TIME").call({from : account})
            .then(function(response){
                 console.log(response);
+                proposalVoteCycleDisplay.innerHTML = response;
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+           selectedProposalContract.methods.getPropertyUINT("VOTE_STAKE_PRICE").call({from : account})
+           .then(function(response){
+                console.log(response);
+                voteStakePriceDisplay.innerHTML = response;
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+
+           selectedProposalContract.methods.getPropertyUINT("TARGET_PROPOSAL_FUNDING").call({from : account})
+           .then(function(response){
+                console.log(response);
+                targetProposalFundingAmountDisplay.innerHTML = response; 
            })
            .catch(function(err){
                 console.log(err);
@@ -948,21 +974,25 @@
            .catch(function(err){
                 console.log(err);
            });
-  
-            
-            
-            
-            targetSubmissionDateDisplay.innerHTML = "";
-            proposalVoteCycleDisplay.innerHTML = "";
-            voteStakePriceDisplay.innerHTML = "";
-            proposalImageDisplay.innerHTML = "";
-            targetProposalFundingAmountDisplay.innerHTML = "";  
-            additionalInformationDisplay.innerHTML = "";
 
         }
 
         function addSection(){ 
-            iProposalContract 
+            ipfs.add(proposalSectionContent.value)
+            .then(function(response){
+                iProposalContract.methods.addSection(proposalSectionTitle.value, proposalSectionContent.value).send({from :account})
+                .then(function(response){
+                    mintSectionNFT(mintAddress, user, proposalSectionContent.value, proposalSectionTitle.value);
+                })
+                .catch(function(err){
+                     console.log(err);
+                 });
+                
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+             
         }
         const form = new FormData();
 
@@ -978,7 +1008,7 @@ const mintResponse = document.getElementById("mint_result");
 
 
 
-async function mintSectionNFT(mintAddress, user, sectionContent, sectionTitle) {
+async function mintSectionNFT(mintAddress, user, _sectionContent, _sectionTitle) {
     console.log("minting" + mintAddress + " " + user + " " + text);
     let blob = new Blob([sectionContent], {
         type: 'text/plain'
