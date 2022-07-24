@@ -1,0 +1,747 @@
+<!doctype html>
+<!--
+* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
+* @version 1.0.0-beta10
+* @link https://tabler.io
+* Copyright 2018-2022 The Tabler Authors
+* Copyright 2018-2022 codecalm.net Paweł Kuna
+* Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Design Proposal - Welcome</title>
+    <!-- CSS files -->
+    <link href="./dist/css/tabler.min.css" rel="stylesheet" />
+    <link href="./dist/css/tabler-flags.min.css" rel="stylesheet" />
+    <link href="./dist/css/tabler-payments.min.css" rel="stylesheet" />
+    <link href="./dist/css/tabler-vendors.min.css" rel="stylesheet" />
+    <link href="./dist/css/demo.min.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/ipfs-http-client-lite/dist/index.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ethjs@0.3.4/dist/ethjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+
+<body>
+    <div class="page">
+        <header class="navbar navbar-expand-md navbar-light d-print-none">
+            <div class="container-xl">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+                    <a href=".">
+                        <img src="./static/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                    </a>
+                </h1>
+                <div class="navbar-nav flex-row order-md-last">
+                    <div class="nav-item d-none d-md-flex me-3">
+                        <div class="btn-list">                        
+                            <a id="connect_web_3" href="#" class="btn"  rel="noreferrer">
+                                Connect Web 3
+                            </a>
+                        </div>
+                    </div>
+             
+           
+                </div>
+            </div>
+        </header>
+        <div class="navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <div class="navbar navbar-light">
+                    <div class="container-xl">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="5 12 3 12 12 3 21 12 19 12" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                    </span>
+                                    <span class="nav-link-title">
+                      Home
+                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <span id="show_wallet"></span>
+                            </li>
+                        </ul>
+                        <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
+                            <form action="." method="get">
+                                <div class="input-icon">
+                                    <span class="input-icon-addon">
+                      <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7" /><line x1="21" y1="21" x2="15" y2="15" /></svg>
+                    </span>
+                                    <input type="text" value="" class="form-control" placeholder="Search…" aria-label="Search in website">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="container-xl">
+                <!-- Page title -->
+                <div class="page-header d-print-none">
+                    <div class="row g-2 align-items-center">
+                        <div class="col">
+                            <h2 class="page-title">
+                                Design Proposal dashboard
+                            </h2>
+                        </div>
+                        <!-- Page title actions -->
+                        <div class="col-12 col-md-auto ms-auto d-print-none">
+                            <div class="btn-list">
+                                <span class="d-none d-sm-inline">
+                                
+                        <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>Create Draft Proposal
+                        </a>
+                        <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-cards" data-masonry='{"percentPosition": true }'>
+              <div class="col-sm-6 col-lg-4">
+                <div class="card">
+                  <div class="card-body p-0">
+                    <div class="card-table table-responsive">
+                      <table id="proposal_list_table" class="table table-vcenter">
+                          <thead>
+                              <tr>
+                                  <th>Proposal</th>
+                                  <th>Title</th>
+                                  <th>Target Submit Date</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td class="w-1">
+                                      <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
+                                </td>
+                                <td class="td-truncate">
+                                    <div class="text-truncate">
+                                        Fix dart Sass compatibility (#29755)
+                                    </div>
+                                </td>
+                                <td class="text-nowrap text-muted">28 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm">JL</span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Change deprecated html tags to text decoration classes (#29604)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">27 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/002m.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            justify-content:between ⇒ justify-content:space-between (#29734)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">26 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/003m.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Update change-version.js (#29736)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">26 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Regenerate package-lock.json (#29730)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">25 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-8">
+                    <span id="draft_proposal_info_card">
+                        <div class="card">
+                        <div class="card-body">
+                            <div class="row row-0">
+                                <div class="col-3">
+                                    <h4>Proposal Draft</h4>
+                                    <span id="proposal_image"><img src="./static/photos/2854fd67ddbd6217.jpg" class="w-75 h-75 " alt="Card side image"></span>
+                                </div>
+                                <div class="col-9">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><span id="proposal_name"></h3>
+                          <table>
+                            <tr>
+                              <td><a id="background_data" href="">Background Data</a></td><td>Visibility :<span id="visibility"></span></td>
+                                            <td>Prime Author: <span id="prime_author"></span></td>
+                                            <td>Target Submission Date: <span id="target_submission_data"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Vote Cycle: <span id="vote_cycle"></span></td>
+                                                <td>Vote Stake Price</td>
+                                                <td>Proposed Funding Amount: <span id="proposed_funding_amount"></span></td>
+                                                <td></td>
+                                            </tr>
+
+                                            </table>
+                                            <h4>Additional Information</h4>
+                                            <p class="text-muted"><span id="additional_information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </span>
+                </div>
+
+                <div class="col-sm-6 col-lg-8">
+                    <span id="add_proposal_span">
+                    <div class="card">
+                        <div class="card-body ">
+                            <div class="mb-3">
+                                <label class="form-label">Add Proposal Section <span class="form-label-description">56/100</span></label>
+                                <input id="proposal_section_title" type="text" placeholder="enter section title" class="form-control" />
+                                <hr>
+                                <textarea id="propsal_section_content" class="form-control" name="example-textarea-input" rows="6" placeholder="Content..">Oh! Come and see the violence inherent in the system! Help, help, I'm being repressed! We shall say 'Ni' again to you, if you do not appease us. I'm not a witch. I'm not a witch. Camelot!</textarea>
+                            </div>
+
+                            <div class="mt-2 d-flex">
+                              <span id="proposal_section_cost" class="badge bg-success ms-auto mt-2 d-flex"> Section Cost: 5 USDC</span> &nbsp;
+                              <a id="add_section_approve_button" href="#" class="btn btn-warning ms-auto">Approve</a>  &nbsp; 
+                              <a id="add_section_button" href="#" class="btn btn-primary ms-auto">Add Section</a>                                
+                            </div>
+                        </div>
+                    </div>
+                    </span>
+                </div>
+
+                <!-- START SECTIONS -->
+                
+                <div id="proposal_sections" class="col-md-3 col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Section Title</h3>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                        </div>
+                        <!-- Card footer -->
+                        <div class="card-footer">
+                            <div class="d-flex">
+                                
+                                  <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
+                                  <span id="vote_cycle_time_remaining" class="mt-3 badge bg-danger ms-auto mt-2 d-flex">Time Remaining: 10 mins</span>
+                                    
+                                <a href="#" class="btn btn-warning ms-auto">Approve</a>
+                                <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Section Title</h3>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                        </div>
+                        <!-- Card footer -->
+                        <div class="card-footer">
+                            <div class="d-flex">
+                              <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
+                              <span id="vote_cycle_time_remaining" class="mt-3 badge bg-warning ms-auto mt-2 d-flex">Time Remaining: 20 mins</span>
+
+                                <a href="#" class="btn btn-warning ms-auto">Approve</a>
+                                <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Section Title</h3>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                        </div>
+                        <!-- Card footer -->
+                        <div class="card-footer">
+                            <div class="d-flex">
+
+                                <table>
+                                    <tr>
+                                        <td>Author</td>
+                                        <td><b>Total Vote Funding:</b></td>
+                                        <td>Total Votes Cast</td>
+                                        <td>Votes For</td>
+                                        <td>Votes Against</td>
+                                        <td><b>Vote Result</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span id="section_author" class="mt-3 badge">0xEEB35AC9A858C4CF83A301E791705A0849A7FD8F</span></td>
+                                        <td><span id="vote_cost" class="mt-3 badge bg-orange"> 10 USDC</span></td>
+                                        <td><span id="vote_cost" class="mt-3 badge bg-orange"> 5</span></td>
+                                        <td><span id="vote_for" class="mt-3 badge bg-green-lt">3</span></td>
+                                        <td><span id="vote_for" class="mt-3 badge bg-pink-lt">2</span></td>
+                                        <td><span id="vote_cycle_time_remaining" class="mt-3 badge bg-success">Accepted</span></td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+       
+                <!-- END DAPP-->
+
+
+
+            </div>
+        </div>
+    </div>
+    <footer class="footer footer-transparent d-print-none">
+        <div class="container-xl">
+            <div class="row text-center align-items-center flex-row-reverse">
+                <div class="col-lg-auto ms-lg-auto">
+                </div>
+                <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                    <ul class="list-inline list-inline-dots mb-0">
+                        <li class="list-inline-item">
+                            Copyright &copy; 2022
+                            <a href="https://www.blockstarlogic.com" class="link-secondary">Block 	
+                      <font color="red">&#9733;</font> Logic</a>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    </div>
+
+    <!-- Start Modals -->
+    <!-- Vote Modal -->
+    <div class="modal modal-blur fade" id="modal-vote" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Vote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Vote Comment</h4>
+                    <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="enter vote comment ..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Up Vote</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Down Vote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Create Modal -->
+    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Draft Proposal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">DAO Proposal Name</label>
+                        <input id="proposal_name_field" type="text" class="form-control" name="example-text-input" placeholder="Your report name">
+                    </div>
+                    <label class="form-label">Proposal Type</label>
+                    <div class="form-selectgroup-boxes row mb-3">
+                        <div class="col-lg-6">
+                            <label class="form-selectgroup-item">
+                                <input id="proposal_type_field" type="radio" name="report-type" value="simple" class="form-selectgroup-input" checked>
+                                    <span class="form-selectgroup-label d-flex align-items-center p-3">
+                                    <span class="me-3">
+                                        <span class="form-selectgroup-check"></span>
+                                    </span>
+                                    <span class="form-selectgroup-label-content">
+                                        <span class="form-selectgroup-title strong mb-1">Simple</span>
+                                        <span class="d-block text-muted">Provide only basic data needed for your draft proposal</span>
+                                    </span>
+                                    </span>
+                                </label>
+                        </div>
+                        <div class="col-lg-6">
+                            <label class="form-selectgroup-item">
+                <input id="proposal_type" type="radio" name="report-type" value="advanced" class="form-selectgroup-input">
+                <span class="form-selectgroup-label d-flex align-items-center p-3">
+                  <span class="me-3">
+                    <span class="form-selectgroup-check"></span>
+                  </span>
+                  <span class="form-selectgroup-label-content">
+                    <span class="form-selectgroup-title strong mb-1">Advanced</span>
+                    <span class="d-block text-muted">Insert additional advanced analyses to be inserted into your Proposal</span>
+                  </span>
+                </span>
+              </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="mb-3">
+                                <label class="form-label">Background Data url</label>
+                                <div  class="input-group input-group-flat">
+                  
+                                    <input id="background_data_url_field" type="text" class="form-control ps-0" value="report-01" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mb-3">
+                                <label class="form-label">Visibility</label>
+                                <select id="proposal_draft_visibility_field" class="form-select">
+                                    <option value="1" selected>Invite Only</option>
+                                    <option value="2">Public</option>                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Proposal Owner Name</label>
+                                <input id="proposal_owner_name_field" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Target Submission Date</label>
+                                <input id="target_submission_date_field" type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Proposal Section Vote Cycle</label>
+                                <select id="proposal_section_vote_cycle_field" class="form-select">
+                                    <option value="0.5" selected>30 mins</option>
+                                    <option value="1" selected>1 hr</option>
+                                    <option value="12" selected>12 hr</option>
+                                    <option value="24" selected>24 hr</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Vote Stake Price</label>
+                                <select id="vote_stake_price_field" class="form-select">
+                                <option value="1" selected>1 USDC</option>
+                                <option value="3" selected>3 USDC</option>
+                                <option value="5" selected>5 USDC</option>
+                                <option value="10" selected>10 USDC</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Proposal Image</label>
+                                <input id="proposal_image_field" type="file" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Funding Amount</label>
+                                <input id="target_proposal_funding_amount" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div>
+                                <label class="form-label">Additional Information</label>
+                                <textarea id="additional_information" class="form-control" rows="3"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+            Cancel
+          </a>
+                    <a href="#" id="create_report_button" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
+                        <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>Create
+                        draft Proposal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Libs JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" defer></script>
+    <!-- Tabler Core -->
+    <script src="./dist/js/tabler.min.js" defer></script>
+    <script src="./dist/js/demo.min.js" defer></script>
+    <script src="abi/i_design_proposal_abi.js"></script>
+    <script src="abi/i_proposal_abi.js"></script>
+    <script src="abi/i_section_abi.js"></script>
+    <script src="js/autoconnect.js"></script>
+    <script>
+        const proposalListTable      = ge("proposal_list_table");
+        const draftProposalInfoCard  = ge("draft_proposal_info_card");
+        const addProposalSpan        = ge("add_proposal_span");
+        const proposalSectionTitle   = ge("proposal_section_title");
+        const proposalSectionContent = ge("proposal_section_content");
+        const proposalSectionCost    = ge("proposalSectionCost");
+        const addSectionApproveButton = ge("add_section_approve_button");
+        const addSectionButton       = ge("add_section_button");
+
+        const backgroundDataField   = ge("background_data_url");
+        const proposalDraftVisibilityField = ge("proposal_draft_visibility_field");
+        const proposalOwnerField = ge("proposal_owner_name_field");
+        const targetSubmissionDateField = ge("target_submission_date_field");
+        const pproposalVoteCycleField = ge("proposal_section_vote_cycle_field");
+        const voteStakePriceField = ge("vote_stake_price_field");
+        const proposalImageField = ge("proposal_image_field");
+        const targetProposalFundingAmount = ge("target_proposal_funding_amount");
+        const additionalInformation = ge("additional_information");
+        const createReportButton = ge("create_report_button");
+
+
+        // Design proposal 0xBE8910c2ED03A7f96A1e6AEd157282718a3a9e86
+
+        function text(txt) {
+            return document.createTextNode(txt);
+        }
+
+        function ce(element) {
+            return document.createElement(element);
+        }
+
+        function ge(id) {
+            return document.getElementById(id);
+        }
+    </script>
+
+</body>
+
+</html>
