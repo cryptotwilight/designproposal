@@ -25,7 +25,7 @@ nativeCurrency.decimals = 18;
 nativeCurrency.symbol = 'CELO';
 chain.nativeCurrency = nativeCurrency; 
 */
-
+/*
 var chain = {};
 chain.name = 'Optimistic Ethereum Testnet Kovan (OKOV)';
 chain.id =  69;
@@ -36,6 +36,19 @@ nativeCurrency.name = 'KOR';
 nativeCurrency.decimals = 18;
 nativeCurrency.symbol = 'KOR';
 chain.nativeCurrency = nativeCurrency; 
+*/
+
+var chain = {};
+chain.name = 'Sepolia Test Network';
+chain.id =  11155111;
+chain.rpcUrls = ['https://sepolia.infura.io/v3/'];
+chain.blockExplorerUrls = ['https://sepolia.etherscan.io'];
+var nativeCurrency = {}; 
+nativeCurrency.name = 'SepoliaETH';
+nativeCurrency.decimals = 18;
+nativeCurrency.symbol = 'SepoliaETH';
+chain.nativeCurrency = nativeCurrency; 
+
 
 var provider = "https://cloudflare-eth.com/";
 var web3Provider = new Web3.providers.HttpProvider(provider);
