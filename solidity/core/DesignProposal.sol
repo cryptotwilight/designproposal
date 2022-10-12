@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
+// Design Proposal Contracts supported by Protocol Labs Next Step Grant
 
 pragma solidity ^0.8.15;
 

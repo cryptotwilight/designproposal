@@ -76,9 +76,9 @@
                             <form action="." method="get">
                                 <div class="input-icon">
                                     <span class="input-icon-addon">
-                      <!-- Download SVG icon from http://tabler-icons.io/i/search -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7" /><line x1="21" y1="21" x2="15" y2="15" /></svg>
-                    </span>
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7" /><line x1="21" y1="21" x2="15" y2="15" /></svg>
+                                    </span>
                                     <input type="text" value="" class="form-control" placeholder="Search…" aria-label="Search in website">
                                 </div>
                             </form>
@@ -149,25 +149,26 @@
                                             <div class="card-body">
                                                 <div class="row row-0">
                                                     <div class="col-3">
-                                                        <h4><span id="proposal_status_span">${proposal status}</span></h4>
-                                                        <span id="proposal_image"><img src="./static/photos/2854fd67ddbd6217.jpg" class="w-75 h-75 " alt="Card side image"></span>
+                                                        <h4>PROPOSAL STATUS: <span id="proposal_status_display">${proposal status}</span></h4>
+                                                        <span id="proposal_image_display"><img src="./static/photos/2854fd67ddbd6217.jpg" class="w-75 h-75 " alt="Card side image"></span>
                                                     </div>
                                                     <div class="col-9">
                                                         <div class="card-body">
                                                             <h3 class="card-title"><span id="proposal_title_display">${proposal title}</span></h3>
                                                             <div class="row">
-                                                                <div class="col-lg-3"><a id="background_data" href="">Background Data</a></div>
-                                                                <div class="col-lg-3"><label class="form-label">Proposal Owner</label> <span id="proposal_owner_display">${name} ${0x000000000000000000000}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">DAO</label><a id="proposal_dao_display" href="">${dao}</a></div>
+                                                                <div class="col-lg-3"><label class="form-label">Proposal Owner</label> <span id="proposal_owner_name_display">${name}</span><br/><span id="proposal_owner_address_display">${0x000000000000000000000000}</span></div>
                                                                 <div class="col-lg-3"><label class="form-label">Target Submission Date</label> <span id="target_submission_date_display">${2022/10/31}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Proposal Currency</label> <span id="proposal_currency_span">${USDC}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Section Addition Fee</label> <span id="section_addition_fee_span">${45 USDC}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Cycle Time</label> <span id="vote_cycle_time_span">${10 mins}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Vote Fee</label> <span id="voting_fee_span">${5 USDC}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Proposal Background</label><a id="background_data_url_display" href="">${background data}</a></div>
+                                                                <div class="col-lg-3"><label class="form-label">Proposal Currency</label> <span id="proposal_currency_display">${USDC}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Section Addition Fee</label> <span id="section_creation_fee_span">${45 USDC}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Cycle Time</label> <span id="section_vote_cycle_time_display">${10 mins}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Vote Fee</label> <span id="section_vote_fee_span">${5 USDC}</span></div>
                                                             </div>  
                                                             <div class="row">
                                                                 <div class="col-lg-12">
                                                                     <h4>Additional Information</h4>
-                                                                    <p class="text-muted"><span id="additional_information">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</span></p>                                                        
+                                                                    <p class="text-muted"><span id="additional_information_display">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</span></p>                                                        
                                                                 </div>
                                                             </div>                           
                                                         </div>
@@ -341,53 +342,61 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
+                        <label class="form-label">DAO</label>
+                        <input id="dao_name_field" type="text" class="form-control" name="example-text-input" placeholder="..enter DAO name">
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">DAO Proposal Name</label>
-                        <input id="proposal_name_field" type="text" class="form-control" name="example-text-input" placeholder="Your report name">
+                        <input id="proposal_name_field" type="text" class="form-control" name="example-text-input" placeholder="..enter DAO proposal name">
                     </div>
                  
                     <div class="row">
                         <div class="col-lg-6">
+                            <div class="col-lg-6">
+                                <div class="mb-6">
+                                    <label class="form-label">Proposal Owner Name</label>
+                                    <input id="proposal_owner_name_field" type="text" placeholder="...enter your name" class="form-control">
+                                    <br/>
+                                    <span id="proposal_creating_account"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Proposal Image</label>
+                                <input id="proposal_image_field" type="file" class="form-control" />
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Background Data url</label>
                                 <div  class="input-group input-group-flat">                  
-                                    <input id="background_data_url_field" type="text" class="form-control ps-0" value="report-01" autocomplete="off">
+                                    <input id="background_data_url_field" type="text" class="form-control ps-0" placeholder="...enter link to any background data" autocomplete="off">
                                 </div>
                             </div>
                         </div>                       
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label class="form-label">Proposal Currency</label>
-                                <div  class="input-group input-group-flat">                  
-                                    <input id="proposal_currency_field" type="text" class="form-control ps-0" value="report-01" autocomplete="off">
-                                </div>
-                            </div>
-                        </div>                       
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label class="form-label">Proposal Owner Name</label>
-                                <input id="proposal_owner_name_field" type="text" class="form-control">
-                                <span id="proposal_creating_account"></span>
-                            </div>
-                        </div>
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Target Submission Date</label>
                                 <input id="target_submission_date_field" type="date" class="form-control">
                             </div>
                         </div>
+                    </div>
+                                  
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Proposal Currency</label>
+                                <div  class="input-group input-group-flat">                  
+                                    <input id="proposal_currency_field" type="text" class="form-control ps-0" value="0x3E1Da782E575889F1675eb59aF8396232716B5Ce" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>  
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Proposal Section Creation Fee</label>
-                                <select id="proposal_section_creation_fee_field" class="form-select">
-                                    <option value="1000000000000000000">1 USDC</option>
-                                    <option value="5000000000000000000" selected>5 USDC</option>
-                                    <option value="10000000000000000000">10 USDC</option>
-                                    <option value="15000000000000000000">15 USDC</option>
-                                </select>
+                                <input id="proposal_section_creation_fee_field" type="text" class="form-control ps-0" autocomplete="off"/>                           
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -408,20 +417,10 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Voting Fee</label>
-                                <select id="vote_fee_field" class="form-select">
-                                <option value="250000000000000000" selected>0.25 USDC</option>
-                                <option value="500000000000000000" selected>0.50 USDC</option>
-                                <option value="750000000000000000" selected>0.75 USDC</option>
-                                <option value="1000000000000000000" selected>1 USDC</option>
-                              </select>
+                                <input id="vote_fee_field" type="text" class="form-control ps-0" autocomplete="off"/>                         
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label class="form-label">Proposal Image</label>
-                                <input id="proposal_image_field" type="file" class="form-control" />
-                            </div>
-                        </div>
+
                         <div class="col-lg-12">
                             <div>
                                 <label class="form-label">Additional Information</label>
@@ -450,13 +449,11 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-            Cancel
-          </a>
-                    <a href="#" id="create_report_button" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
+                    <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">Cancel</a>
+                    <a href="javascript:createDraftProposal();" onclick="createDraftProposal()" id="create_draft_proposal_button" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
                         <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>Create
-                        draft Proposal
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                        Create Draft Proposal
                     </a>
                 </div>
             </div>
@@ -468,6 +465,10 @@
     <script src="./dist/js/tabler.min.js" defer></script>
     <script src="./dist/js/demo.min.js" defer></script>
     
+
+    <!-- IERC20 -->
+    <script src="abi/i_erc20_metadata_abi.js"></script>
+
     <!-- Open Block EI Integration -->
     <script src="abi/i_open_register_abi.js"></script>
 
@@ -490,46 +491,48 @@
         const addSectionButton       = ge("add_section_button");
 
         // proposal create
+        const daoNameField                  = ge("dao_name_field");
         const proposalNameField             = ge("proposal_name_field");
-        const proposalCurrencyField         = ge("proposal_currency_field"); // set default 0x3E1Da782E575889F1675eb59aF8396232716B5Ce
-        const backgroundDataField           = ge("background_data_url_field");
-
         const proposalOwnerField            = ge("proposal_owner_name_field");
         const creatingAccountSpan           = ge("proposal_creating_account"); // set to connected account
-        
+        const proposalImageField            = ge("proposal_image_field");
+        const backgroundDataField           = ge("background_data_url_field");
         const targetSubmissionDateField     = ge("target_submission_date_field");
-
+        
+        const proposalCurrencyField         = ge("proposal_currency_field"); // set default 0x3E1Da782E575889F1675eb59aF8396232716B5Ce       
         const proposalSectionCreationFee    = ge("proposal_section_creation_fee_field");
-
         const pproposalVoteCycleTimeField   = ge("proposal_section_vote_cycle_time_field");
         const voteFeeField                  = ge("vote_fee_field");
 
-        const proposalImageField            = ge("proposal_image_field");
-
         const additionalInformation         = ge("additional_information");
 
-        const proposalCreationFeeSpan       = ge("proposal_creation_fee_span");
-
+        const proposalCreationFeeSpan           = ge("proposal_creation_fee_span");
         const proposalCreationFeeTokenContractSpan = ge("proposal_creation_fee_token_contract_span");
-
         const approveProposalCreationSpendButton = ge("approve_proposal_creation_spend_button");
-
-        const createReportButton            = ge("create_report_button");
+        const createReportButton                = ge("create_draft_proposal_button");
         
-        const displayProposalCreateHash     = ge("proposal_create_hash_display");
+        const displayProposalCreateHash         = ge("proposal_create_hash_display");
 
         // proposal display
-        const proposalTitleSpan                 = ge("proposal_title_display");
-        const backgroundDataDisplay             = ge("background_data_url_display");
-        const proposalDraftVisibilityDisplay    = ge("proposal_draft_visibility_display");
-        const proposalOwnerDisplay              = ge("proposal_owner_name_display");
-        const targetSubmissionDateDisplay       = ge("target_submission_date_display");
-        const pproposalVoteCycleDisplay         = ge("proposal_section_vote_cycle_display");
-        const voteStakePriceDisplay             = ge("vote_stake_price_display");
         const proposalImageDisplay              = ge("proposal_image_display");
-        const targetProposalFundingAmountDisplay = ge("target_proposal_funding_amount_display");
-        const additionalInformationDisplay = ge("additional_information_display");
+        const proposalStatusDisplay             = ge("proposal_status_display");
+        const proposalTitleSpan                 = ge("proposal_title_display");
+        const proposalDAODisplay                = ge("proposal_dao_display");
+        const backgroundDataDisplay             = ge("background_data_url_display");
+        const proposalOwnerNameDisplay          = ge("proposal_owner_name_display");
+        const proposalOwnerAddressDisplay       = ge("proposal_owner_address_display");
+        const proposalCurrencyDisplay           = ge("proposal_currency_display");
         
+        const targetSubmissionDateDisplay       = ge("target_submission_date_display");
+
+        const sectionCreationFeeDisplay         = ge("section_creation_fee_span");
+        const sectionVoteCycleTimeDisplay       = ge("section_vote_cycle_time_display");
+        const sectionVoteFeeDisplay             = ge("section_vote_fee_span");
+        
+
+        const additionalInformationDisplay      = ge("additional_information_display");
+        
+        const ipfsRoot = "https://designproposal.infura-ipfs.io/ipfs/";
 
         const iOpenRegisterAddress = "0x25661cca52F1Df6D143411E8216a79555de12F1E"; 
         const iOpenRegisterContract = new web3.eth.Contract(iOpenRegisterAbi, iOpenRegisterAddress); 
@@ -575,8 +578,10 @@
                     cell.appendChild(center);
                     return; 
                 }
+                console.log("loading proposalas ");
                 for(var x = 0; x < proposalAddresses.length; x++) {
                     var proposalAddress = proposalAddresses[x];
+                    console.log("proposal : " + proposalAddress);
                     addDisplayRow(proposalAddress);
                 }
             })
@@ -585,43 +590,62 @@
             })
         }
 
+        function setImageDisplay(iProposalContract, display) {
+            iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE_IPFS_KEY").call({from : account})
+            .then(function(response){
+                console.log(response);
+                display.setAttribute("style", "background-image: url("+ipfsRoot+response+")");                
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+        }
+
+        function setImageDisplayInnerHTML(iProposalContract, display) {
+            iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE_IPFS_KEY").call({from : account})
+            .then(function(response){
+                console.log(response);
+                display.innerHTML = "<img src='"+ipfsRoot+response+"' class=\"w-75 h-75\" alt=\"\">";                
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+        }
+
 
         function addDisplayRow(proposalAddress) {
             
-            var iProposalContract = new web3.eth.Contract(iProposalAbi); 
+            var iProposalContract = new web3.eth.Contract(iProposalAbi, proposalAddress); 
 
             var row = proposalListTable.tBodies[0].insertRow(); 
 
             var a = ce("a");
-            a.setAttribute("href","javascript:displayProposal("+proposalAddress+")");
+            a.setAttribute("href","javascript:displayProposal('"+proposalAddress+"')");
         
             var imageCell = row.insertCell();
             addClassToElement(imageCell, "w-1");
             var imageSpan = ce("span");
             addClassToElement(imageSpan, "avatar avatar-sm");
-            iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE_IPFS_KEY").call({from : account})
-            .then(function(response){
-                console.log(response);
-                imageSpan.setAttribute("style", "background-image: url(http://ipfs.io/ipfs/"+response+")");
-                a.append(imageSpan);
-                immageCell.append(a);
-            })
-            .catch(function(err){
-                console.log(err);
-            });
+            a.append(imageSpan);
+            imageCell.append(a);
+            setImageDisplay(iProposalContract, imageSpan);
+
 
             var b = ce("a");
-            b.setAttribute("href","javascript:displayProposal("+proposalAddress+")");
+            b.setAttribute("href","javascript:displayProposal('"+proposalAddress+"')");
 
             var titleCell = row.insertCell();
-            addClassToElement(titleCell,"td-truncate" );
-            var div = ce("div");
-            addClassToElement(div, "text-truncate");
-            titleCell.append(div);
+            addClassToElement(titleCell,"td" );
+            var di = ce("div");
+            di.setAttribute("class", "text");
+            
+            
             iProposalContract.methods.getTitle().call({from : account})
             .then(function(response){
-                console.log(response);
-                div.append(b.append(text(response)));
+                console.log(response);                                
+                b.appendChild(text(response));
+                di.appendChild(b);
+                titleCell.append(di);
             })
             .catch(function(err){
                 console.log(err);
@@ -632,7 +656,7 @@
             iProposalContract.methods.getTargetSubmissionDate().call({from : account})
             .then(function(response){
                 console.log(response);
-                targetSubmitDate.append(text(response));
+                targetSubmitDateCell.append(text(formatDate(new Date(response*1000))));
             })
             .catch(function(err){
                 console.log(err);
@@ -642,23 +666,31 @@
         var arrived = false; 
 
         function createDraftProposal() { 
-            var ipfsPropertyNames = ["PROPOSAL_ADDITIONAL_INFORMATION","PROPOSAL_IMAGE","PROPOSAL_VISIBILITY"];
-            let ipfsPropertyValues = new Array(3);
-            ipfsPropertyValues[3] = proposalDraftVisibilityField.value; 
+            var ipfsPropertyNames = ["PROPOSAL_INFO_IPFS_KEY","PROPOSAL_IMAGE_IPFS_KEY"];
+            let ipfsPropertyValues = new Array(2);
 
-            var uintPropertyNames = ["SECTION_VOTE_CYCLE", "SECTION_VOTE_STAKE_PRICE", "PROPOSED_FUNDING_AMOUNT"];
-            var uintPropertyValues = new Array(4);
-            uintPropertyValues[0] = pproposalVoteCycleField.value; 
-            uintPropertyValues[1] = voteStakePriceField.value; 
-            uintPropertyValues[2] = proposedFundingAmountField.value;             
+            var uintPropertyNames = ["VOTE_CYCLE_TIME_KEY", "VOTE_FEE_KEY", "SECTION_FEE_KEY"];
+            var uintPropertyValues = new Array(3);
+            uintPropertyValues[0] = pproposalVoteCycleTimeField.value*60; 
+            uintPropertyValues[1] = voteFeeField.value; 
+            uintPropertyValues[2] = proposalSectionCreationFee.value;             
 
-            var owner = account; 
-            var title = proposalNameField.value; 
-            var backgroundDataLink = backgroundDataField.value; 
-            var currencyAddress = proposalCurrencyField.value; 
-            var targetSubmissionDate = targetSubmissionDateField.value; 
+            var dao                     = daoNameField.value;
+            var owner                   = account; 
+            var title                   = proposalNameField.value; 
+            var backgroundDataLink      = backgroundDataField.value; 
+            var currencyAddress         = proposalCurrencyField.value; 
+            var targetSubmissionDate    = new Date(targetSubmissionDateField.value).getTime();
+            console.log(targetSubmissionDate) ;
 
-            ipfs.add(additionalInformation.value)
+            var proposalInfo = {};
+            proposalInfo.dao            = dao;
+            proposalInfo.ownerName      = proposalOwnerField.value;             
+            proposalInfo.proposalTitle  = title;
+            proposalInfo.additionalInfo = additionalInformation.value; 
+            proposalInfo.creationDate   = new Date().getTime(); 
+
+            ipfs.add(JSON.stringify(proposalInfo))
             .then(function(response){
                 console.log(response);
                 ipfsPropertyValues[0] = response[0].hash;
@@ -668,10 +700,12 @@
                     console.log(response);
                     ipfsPropertyValues[1] = response[0].hash; 
                     
-                    create(owner, title, targetSubmissionDate, 
-                                                            backgroundDataLink, currencyAddress, 
-                                                            ipfsPropertyNames, ipfsPropertyValues, 
-                                                            uintPropertyNames, uintPropertyValues); 
+                    create(owner, 
+                            title, 
+                            targetSubmissionDate, 
+                            backgroundDataLink, currencyAddress, 
+                            ipfsPropertyNames, ipfsPropertyValues, 
+                            uintPropertyNames, uintPropertyValues); 
                 })
                 .catch(function(err){
                     console.log(err);
@@ -694,7 +728,8 @@
                         uintPropertyValues) {
 
                         iDesignProposalContract.methods.createProposal( owner, 
-                                                                        title, targetSubmissionDate, 
+                                                                        title, 
+                                                                        targetSubmissionDate, 
                                                                         backgroundDataLink, 
                                                                         currencyAddress, 
                                                                         ipfsPropertyNames, 
@@ -717,31 +752,48 @@
         }
 
         function displayProposal(proposalAddress) {
+            
+            console.log("proposal address : " + proposalAddress);
             selectedProposalContract = new web3.eth.Contract(iProposalAbi, proposalAddress);
-           
+            setImageDisplayInnerHTML(selectedProposalContract, proposalImageDisplay);
+
+
            selectedProposalContract.methods.getTitle().call({from : account})
            .then(function(response){
                 console.log(response);
+                proposalTitleSpan.innerHTML = response; 
            })
            .catch(function(err){
                 console.log(err);
            });
+
+           selectedProposalContract.methods.getStatus().call({from : account})
+           .then(function(response){
+                console.log(response);
+                proposalStatusDisplay.innerHTML = response; 
+           })
+           .catch(function(err){
+                console.log(err);
+           });
+
            selectedProposalContract.methods.getTargetSubmissionDate().call({from : account})
            .then(function(response){
                 console.log(response);
-                targetSubmissionDateDisplay.innerHTML = response;
+                targetSubmissionDateDisplay.innerHTML = formatDate(new Date(response*1000));
            })
            .catch(function(err){
                 console.log(err);
            });
+
            selectedProposalContract.methods.getOwner().call({from : account})
            .then(function(response){
                 console.log(response);
-                proposalOwnerDisplay.innerHTML = response;
+                proposalOwnerAddressDisplay.innerHTML = response;
            })
            .catch(function(err){
                 console.log(err);
            });
+
            selectedProposalContract.methods.getBackgroundDataLink().call({from : account})
            .then(function(response){
                 console.log(response);
@@ -754,15 +806,52 @@
            selectedProposalContract.methods.getCurrencyAddress().call({from : account})
            .then(function(response){
                 console.log(response);
+                var erc20Metadata = new web3.eth.Contract(iERC20MetadataAbi, response);
+                erc20Metadata.methods.symbol().call({from : account})
+                .then(function(response){
+                    var symbol = response; 
+                    console.log("called symbol");
+                    console.log(response);
+                    proposalCurrencyDisplay.innerHTML = response; 
+                    erc20Metadata.methods.decimals().call({from : account})
+                    .then(function(response){
+                        console.log(response);
+                        var decimals = Number("1e"+response); 
+                        selectedProposalContract.methods.getPropertyUINT("VOTE_FEE_KEY").call({from : account})
+                        .then(function(response){
+                            console.log(response);
+                            console.log("decimals");
+                            sectionVoteFeeDisplay.innerHTML = (response / decimals) + " "+symbol;
+                        })
+                        .catch(function(err){
+                            console.log(err);
+                        });
+                        selectedProposalContract.methods.getPropertyUINT("SECTION_FEE_KEY").call({from : account})
+                        .then(function(response){
+                            console.log(response);
+                            console.log("decimals");
+                            sectionCreationFeeDisplay.innerHTML = (response / decimals) + " "+symbol;
+                        })
+                        .catch(function(err){
+                            console.log(err);
+                        });
+                    })
+                    .catch(function(err){
+                        console.log(err);
+                    });
+                })     
+                .catch(function(err){
+                    console.log(err);
+                });
            })
            .catch(function(err){
                 console.log(err);
            });
 
-           selectedProposalContract.methods.getPropertyIPFS("PROPOSAL_ADDITIONAL_INFORMATION").call({from : account})
+           selectedProposalContract.methods.getPropertyIPFS("PROPOSAL_INFO_IPFS_KEY").call({from : account})
            .then(function(response){
                 console.log(response);
-                additionalInformationDisplay.innerHTML = getFromIPFS(response);
+                populateIPFSSourcedData(response);
            })
            .catch(function(err){
                 console.log(err);
@@ -771,29 +860,30 @@
            selectedProposalContract.methods.getPropertyUINT("VOTE_CYCLE_TIME_KEY").call({from : account})
            .then(function(response){
                 console.log(response);
-                proposalVoteCycleTimeDisplay.innerHTML = response;
+                sectionVoteCycleTimeDisplay.innerHTML = (response / 60) + " mins";
            })
            .catch(function(err){
                 console.log(err);
            });
-           selectedProposalContract.methods.getPropertyUINT("VOTE_FEE_KEY").call({from : account})
-           .then(function(response){
-                console.log(response);
-                voteFeeDisplay.innerHTML = response;
-           })
-           .catch(function(err){
-                console.log(err);
-           });
+        }
 
-           selectedProposalContract.methods.getSections().call({from : account})
-           .then(function(response){
+        function populateIPFSSourcedData(ipfsHash) {
+            console.log(" hash : " + ipfsHash);
+            fetch(ipfsRoot + ipfsHash)
+            .then(function(response){
                 console.log(response);
-                // load sections 
-           })
-           .catch(function(err){
+                response.json()
+                .then(function(response){
+                    console.log(response);
+                    var data = response; 
+                    additionalInformationDisplay.innerHTML = data.additionalInfo;
+                    proposalOwnerNameDisplay.innerHTML = data.ownerName; 
+                    proposalDAODisplay.innerHTML = data.dao; 
+                })        
+            })
+            .catch(function(err){
                 console.log(err);
            });
-
         }
 
         function addSection(){ 
@@ -824,8 +914,6 @@
                         };
 
         const mintResponse = document.getElementById("mint_result");
-
-
 
         async function mintSectionNFT(mintAddress, user, _sectionContent, _sectionTitle) {
             console.log("minting" + mintAddress + " " + user + " " + text);
@@ -868,6 +956,11 @@
             console.log("minted");
         }
 
+        var dateOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+
+        function formatDate(date){
+            return date.toLocaleDateString("en-UK", dateOptions);
+        }
 
         function text(txt) {
             return document.createTextNode(txt);

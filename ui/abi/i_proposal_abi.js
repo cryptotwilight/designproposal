@@ -38,12 +38,49 @@ iProposalAbi = [
 	},
 	{
 		"inputs": [],
+		"name": "getContributors",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "_contributors",
+				"type": "address[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "_contributionType",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "getCurrencyAddress",
 		"outputs": [
 			{
 				"internalType": "address",
 				"name": "_currencyAddress",
 				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_feeName",
+				"type": "string"
+			}
+		],
+		"name": "getFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_fee",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -141,6 +178,19 @@ iProposalAbi = [
 	},
 	{
 		"inputs": [],
+		"name": "getStatus",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "_status",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "getTargetSubmissionDate",
 		"outputs": [
 			{
@@ -163,6 +213,57 @@ iProposalAbi = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_contributor",
+				"type": "address"
+			}
+		],
+		"name": "isContributor",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "_isContributor",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_voter",
+				"type": "address"
+			}
+		],
+		"name": "registerVoter",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "_registered",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdrawProposal",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "_withdrawn",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

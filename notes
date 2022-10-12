@@ -1,0 +1,19 @@
+proposal_info_ipfs
+
+{
+	daoName : "",
+	proposalOwnerName : "",
+	additionalInformation : ""
+}
+
+proposal_image_ipfs
+
+section_fee 	: 10x1e18, 5x1e18, 2x1e18
+vote_cycle_time :  12x60, 6x60, 2x60, 1x60, 30, 15, 5, 1
+vote_fee 		: 1x1e18 5x1e17
+
+vote_info_ipfs 
+{
+	voter : "", // address
+	commentary : "" // text
+}
