@@ -1,19 +1,6 @@
 iSectionAbi = [
 	{
 		"inputs": [],
-		"name": "getAuthor",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "_author",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "getContent",
 		"outputs": [
 			{
@@ -33,6 +20,19 @@ iSectionAbi = [
 				"internalType": "uint256",
 				"name": "_time",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getOriginator",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "_author",
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -79,12 +79,12 @@ iSectionAbi = [
 	},
 	{
 		"inputs": [],
-		"name": "getVoteCost",
+		"name": "getTitle",
 		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "_cost",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -111,7 +111,7 @@ iSectionAbi = [
 				"components": [
 					{
 						"internalType": "bool",
-						"name": "vote",
+						"name": "upVote",
 						"type": "bool"
 					},
 					{
@@ -126,7 +126,7 @@ iSectionAbi = [
 					},
 					{
 						"internalType": "uint256",
-						"name": "stakedAmount",
+						"name": "amountPaid",
 						"type": "uint256"
 					},
 					{
@@ -147,7 +147,7 @@ iSectionAbi = [
 		"inputs": [
 			{
 				"internalType": "bool",
-				"name": "upVote",
+				"name": "_upVote",
 				"type": "bool"
 			},
 			{
@@ -165,6 +165,19 @@ iSectionAbi = [
 			}
 		],
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdrawSection",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "_withdrawn",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

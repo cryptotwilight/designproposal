@@ -42,14 +42,14 @@
                 </h1>
                 <div class="navbar-nav flex-row order-md-last">
                     <div class="nav-item d-none d-md-flex me-3">
-                        <div class="btn-list">                        
-                            <a id="connect_web_3" href="#" class="btn"  rel="noreferrer">
+                        <div class="btn-list">
+                            <a id="connect_web_3" href="#" class="btn" rel="noreferrer">
                                 Connect Web 3
                             </a>
                         </div>
                     </div>
-             
-           
+
+
                 </div>
             </div>
         </header>
@@ -121,7 +121,7 @@
                     <div class="row">
                         <table> 
                             <tr>
-                                <td  style="vertical-align:top"> 
+                                <td rowspan="2" style="vertical-align:top"> 
                                     <div class="col-sm-6 col-lg-12">                
                                         <div class="card">
                                             <div class="card-body p-0">
@@ -150,62 +150,66 @@
                                                 <div class="row row-0">
                                                     <div class="col-3">
                                                         <h4>PROPOSAL STATUS: <span id="proposal_status_display">${proposal status}</span></h4>
-                                                        <span id="proposal_image_display"><img src="./static/photos/2854fd67ddbd6217.jpg" class="w-75 h-75 " alt="Card side image"></span>
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <div class="card-body">
-                                                            <h3 class="card-title"><span id="proposal_title_display">${proposal title}</span></h3>
-                                                            <div class="row">
-                                                                <div class="col-lg-3"><label class="form-label">DAO</label><a id="proposal_dao_display" href="">${dao}</a></div>
-                                                                <div class="col-lg-3"><label class="form-label">Proposal Owner</label> <span id="proposal_owner_name_display">${name}</span><br/><span id="proposal_owner_address_display">${0x000000000000000000000000}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Target Submission Date</label> <span id="target_submission_date_display">${2022/10/31}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Proposal Background</label><a id="background_data_url_display" href="">${background data}</a></div>
-                                                                <div class="col-lg-3"><label class="form-label">Proposal Currency</label> <span id="proposal_currency_display">${USDC}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Section Addition Fee</label> <span id="section_creation_fee_span">${45 USDC}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Cycle Time</label> <span id="section_vote_cycle_time_display">${10 mins}</span></div>
-                                                                <div class="col-lg-3"><label class="form-label">Vote Fee</label> <span id="section_vote_fee_span">${5 USDC}</span></div>
-                                                            </div>  
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <h4>Additional Information</h4>
-                                                                    <p class="text-muted"><span id="additional_information_display">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</span></p>                                                        
-                                                                </div>
-                                                            </div>                           
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </span>
+                                <span id="proposal_image_display"><img src="./static/photos/2854fd67ddbd6217.jpg" class="w-75 h-75 " alt="Card side image"></span>
+                            </div>
+                            <div class="col-9">
+                                <div class="card-body">
+                                    <h3 class="card-title"><span id="proposal_title_display">${proposal title}</span></h3>
+                                    <div class="row">
+                                        <div class="col-lg-3"><label class="form-label">DAO</label><a id="proposal_dao_display" href="">${dao}</a></div>
+                                        <div class="col-lg-3"><label class="form-label">Proposal Owner</label> <span id="proposal_owner_name_display">${name}</span><br/><span id="proposal_owner_address_display">${0x000000000000000000000000}</span></div>
+                                        <div class="col-lg-3"><label class="form-label">Target Submission Date</label> <span id="target_submission_date_display">${2022/10/31}</span></div>
+                                        <div class="col-lg-3"><label class="form-label">Proposal Background</label><a id="background_data_url_display" href="">${background data}</a></div>
+                                        <div class="col-lg-3"><label class="form-label">Proposal Currency</label> <span id="proposal_currency_display">${USDC}</span></div>
+                                        <div class="col-lg-3"><label class="form-label">Section Addition Fee</label> <span id="section_creation_fee_span">${45 USDC}</span></div>
+                                        <div class="col-lg-3"><label class="form-label">Cycle Time</label> <span id="section_vote_cycle_time_display">${10 mins}</span></div>
+                                        <div class="col-lg-3"><label class="form-label">Vote Fee</label> <span id="section_vote_fee_span">${5 USDC}</span></div>
+                                        <div class="col-lg-3"><span id="withdraw_proposal_button"></span></div>
                                     </div>
-                                    <!-- END PROPOSAL INFO -->
-        
-                                    <!-- ADD SECTION -->
-                                    <div class="col-sm-6 col-lg-12">
-                                        <span id="add_proposal_span">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4>Additional Information</h4>
+                                            <p class="text-muted"><span id="additional_information_display">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </span>
+            </div>
+            <!-- END PROPOSAL INFO -->
+
+            <!-- ADD SECTION -->
+            <div class="col-sm-6 col-lg-12">
+                <span id="add_section_span">
                                         <div class="card">
                                             <div class="card-body ">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Add Proposal Section <span class="form-label-description">56/100</span></label>
-                                                    <input id="proposal_section_title" type="text" placeholder="enter section title" class="form-control" />
-                                                    <hr>
-                                                    <textarea id="propsal_section_content" class="form-control" name="example-textarea-input" rows="6" placeholder="Content..">Oh! Come and see the violence inherent in the system! Help, help, I'm being repressed! We shall say 'Ni' again to you, if you do not appease us. I'm not a witch. I'm not a witch. Camelot!</textarea>
-                                                </div>
-            
-                                                <div class="mt-2 d-flex">
-                                                <span id="proposal_section_cost" class="badge bg-success ms-auto mt-2 d-flex"> Section Cost: 5 USDC</span> &nbsp;
-                                                <a id="add_section_approve_button" href="#" class="btn btn-warning ms-auto">Approve</a>  &nbsp; 
-                                                <a id="add_section_button" href="#" class="btn btn-primary ms-auto">Add Section</a>                                
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </span>
-                                    </div>
-                                </td>
+                                                <span class="form-label-description">${proposal add message}</span>
+                <div class="mb-3">
+                    <label class="form-label">Add Proposal Section </label>
+                    <input id="section_title_field" type="text" placeholder="enter section title" class="form-control" />
+                    <hr>
+                    <textarea id="section_content_field" class="form-control" name="example-textarea-input" rows="6" placeholder="Content..">Oh! Come and see the violence inherent in the system! Help, help, I'm being repressed! We shall say 'Ni' again to you, if you do not appease us. I'm not a witch. I'm not a witch. Camelot!</textarea>
+                </div>
 
-                                <td style="vertical-align:top">
+                <div class="mt-2 d-flex">
+                    <span id="add_section_cost_display" class="badge bg-success ms-auto mt-2 d-flex"> Section Cost: 5 USDC</span> &nbsp;
+                    <a id="add_section_approve_button" href="#" class="btn btn-warning ms-auto">Approve</a> &nbsp;
+                    <a id="add_section_button" href="#" class="btn btn-primary ms-auto">Add Section</a>
+                </div>
+            </div>
+        </div>
+        </span>
+    </div>
+    </td>
+    </tr>
+    <tr>
 
-                                    <div id="proposal_sections" class="col-md-3 col-lg-12">
+        <td style="vertical-align:top">
+            <span id="proposal_sections"> 
+                                    <div class="col-md-3 col-lg-12">
                                         <div class="card">
                                             <div class="card-body">
                                                 <h3 class="card-title">Section Title</h3>
@@ -216,98 +220,98 @@
                                                 <div class="d-flex">
                                                     
                                                     <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
-                                                    <span id="vote_cycle_time_remaining" class="mt-3 badge bg-danger ms-auto mt-2 d-flex">Time Remaining: 10 mins</span>
-                                                        
-                                                    <a href="#" class="btn btn-warning ms-auto">Approve</a>
-                                                    <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-3 col-lg-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Section Title</h3>
-                                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
-                                            </div>
-                                            <!-- Card footer -->
-                                            <div class="card-footer">
-                                                <div class="d-flex">
-                                                <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
-                                                <span id="vote_cycle_time_remaining" class="mt-3 badge bg-warning ms-auto mt-2 d-flex">Time Remaining: 20 mins</span>
-            
-                                                    <a href="#" class="btn btn-warning ms-auto">Approve</a>
-                                                    <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-3 col-lg-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Section Title</h3>
-                                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
-                                            </div>
-                                            <!-- Card footer -->
-                                            <div class="card-footer">
-                                                <div class="d-flex">
-            
-                                                    <table>
-                                                        <tr>
-                                                            <td>Author</td>
-                                                            <td><b>Total Vote Funding:</b></td>
-                                                            <td>Total Votes Cast</td>
-                                                            <td>Votes For</td>
-                                                            <td>Votes Against</td>
-                                                            <td><b>Vote Result</b></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><span id="section_author" class="mt-3 badge">0xEEB35AC9A858C4CF83A301E791705A0849A7FD8F</span></td>
-                                                            <td><span id="vote_cost" class="mt-3 badge bg-orange"> 10 USDC</span></td>
-                                                            <td><span id="vote_cost" class="mt-3 badge bg-orange"> 5</span></td>
-                                                            <td><span id="vote_for" class="mt-3 badge bg-green-lt">3</span></td>
-                                                            <td><span id="vote_for" class="mt-3 badge bg-pink-lt">2</span></td>
-                                                            <td><span id="vote_cycle_time_remaining" class="mt-3 badge bg-success">Accepted</span></td>
-                                                        </tr>
-                                                    </table>
-            
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+            <span id="vote_cycle_time_remaining" class="mt-3 badge bg-danger ms-auto mt-2 d-flex">Time Remaining: 10 mins</span>
 
-
-                                </td>
-                            </tr>
-                        </table>
-
-
-                       
-                    </div>
-            
-                
-           
+            <a href="#" class="btn btn-warning ms-auto">Approve</a>
+            <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
             </div>
-        </div>
-        <footer class="footer footer-transparent d-print-none">
-            <div class="container-xl">
-                <div class="row text-center align-items-center flex-row-reverse">
-                    <div class="col-lg-auto ms-lg-auto">
+            </div>
+            </div>
+            </div>
+
+            <div class="col-md-3 col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Section Title</h3>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
                     </div>
-                    <div class="col-12 col-lg-auto mt-3 mt-lg-0">
-                        <ul class="list-inline list-inline-dots mb-0">
-                            <li class="list-inline-item">
-                                Copyright &copy; 2022
-                                <a href="https://www.blockstarlogic.com" class="link-secondary">Block 	
-                        <font color="red">&#9733;</font> Logic</a>.
-                            </li>
-                        </ul>
+                    <!-- Card footer -->
+                    <div class="card-footer">
+                        <div class="d-flex">
+                            <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
+                            <span id="vote_cycle_time_remaining" class="mt-3 badge bg-warning ms-auto mt-2 d-flex">Time Remaining: 20 mins</span>
+
+                            <a href="#" class="btn btn-warning ms-auto">Approve</a>
+                            <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
+
+            <div class="col-md-3 col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Section Title</h3>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                    </div>
+                    <!-- Card footer -->
+                    <div class="card-footer">
+                        <div class="d-flex">
+
+                            <table>
+                                <tr>
+                                    <td>Author</td>
+                                    <td><b>Total Vote Funding:</b></td>
+                                    <td>Total Votes Cast</td>
+                                    <td>Votes For</td>
+                                    <td>Votes Against</td>
+                                    <td><b>Vote Result</b></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="section_author" class="mt-3 badge">0xEEB35AC9A858C4CF83A301E791705A0849A7FD8F</span></td>
+                                    <td><span id="vote_cost" class="mt-3 badge bg-orange"> 10 USDC</span></td>
+                                    <td><span id="vote_cost" class="mt-3 badge bg-orange"> 5</span></td>
+                                    <td><span id="vote_for" class="mt-3 badge bg-green-lt">3</span></td>
+                                    <td><span id="vote_for" class="mt-3 badge bg-pink-lt">2</span></td>
+                                    <td><span id="vote_cycle_time_remaining" class="mt-3 badge bg-success">Accepted</span></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </span>
+
+        </td>
+    </tr>
+    </table>
+
+
+
+    </div>
+
+
+
+    </div>
+    </div>
+    <footer class="footer footer-transparent d-print-none">
+        <div class="container-xl">
+            <div class="row text-center align-items-center flex-row-reverse">
+                <div class="col-lg-auto ms-lg-auto">
+                </div>
+                <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                    <ul class="list-inline list-inline-dots mb-0">
+                        <li class="list-inline-item">
+                            Copyright &copy; 2022
+                            <a href="https://www.blockstarlogic.com" class="link-secondary">Block 	
+                        <font color="red">&#9733;</font> Logic</a>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     </div>
     </div>
 
@@ -349,7 +353,7 @@
                         <label class="form-label">DAO Proposal Name</label>
                         <input id="proposal_name_field" type="text" class="form-control" name="example-text-input" placeholder="..enter DAO proposal name">
                     </div>
-                 
+
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="col-lg-6">
@@ -367,15 +371,15 @@
                                 <input id="proposal_image_field" type="file" class="form-control" />
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Background Data url</label>
-                                <div  class="input-group input-group-flat">                  
+                                <div class="input-group input-group-flat">
                                     <input id="background_data_url_field" type="text" class="form-control ps-0" placeholder="...enter link to any background data" autocomplete="off">
                                 </div>
                             </div>
-                        </div>                       
+                        </div>
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Target Submission Date</label>
@@ -383,20 +387,20 @@
                             </div>
                         </div>
                     </div>
-                                  
+
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Proposal Currency</label>
-                                <div  class="input-group input-group-flat">                  
+                                <div class="input-group input-group-flat">
                                     <input id="proposal_currency_field" type="text" class="form-control ps-0" value="0x3E1Da782E575889F1675eb59aF8396232716B5Ce" autocomplete="off">
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Proposal Section Creation Fee</label>
-                                <input id="proposal_section_creation_fee_field" type="text" class="form-control ps-0" autocomplete="off"/>                           
+                                <input id="proposal_section_creation_fee_field" type="text" class="form-control ps-0" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -417,7 +421,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label">Voting Fee</label>
-                                <input id="vote_fee_field" type="text" class="form-control ps-0" autocomplete="off"/>                         
+                                <input id="vote_fee_field" type="text" class="form-control ps-0" autocomplete="off" />
                             </div>
                         </div>
 
@@ -428,17 +432,17 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-4">                            
+                        <div class="col-lg-4">
                             <div class="mb-4">
                                 <label class="form-label">Proposal Creation Fee</label>
-                                <span id="proposal_creation_fee_span"></span>                                
+                                <span id="proposal_creation_fee_span"></span>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-4">
                                 <label class="form-label">Token Contract</label>
                                 <span id="proposal_creation_fee_token_contract_span"></span>
-                            </div>                           
+                            </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-4">
@@ -452,8 +456,7 @@
                     <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">Cancel</a>
                     <a href="javascript:createDraftProposal();" onclick="createDraftProposal()" id="create_draft_proposal_button" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
                         <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-                        Create Draft Proposal
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>                        Create Draft Proposal
                     </a>
                 </div>
             </div>
@@ -464,7 +467,7 @@
     <!-- Tabler Core -->
     <script src="./dist/js/tabler.min.js" defer></script>
     <script src="./dist/js/demo.min.js" defer></script>
-    
+
 
     <!-- IERC20 -->
     <script src="abi/i_erc20_metadata_abi.js"></script>
@@ -476,152 +479,160 @@
     <script src="abi/i_design_proposal_abi.js"></script>
     <script src="abi/i_proposal_abi.js"></script>
     <script src="abi/i_section_abi.js"></script>
-    
+
     <script src="js/autoconnect.js"></script>
-    
+
     <script>
-         // proposal manage
-        const proposalListTable      = ge("proposal_list_table");
-        const draftProposalInfoCard  = ge("draft_proposal_info_card");
-        const addProposalSpan        = ge("add_proposal_span");
-        const proposalSectionTitle   = ge("proposal_section_title");
-        const proposalSectionContent = ge("proposal_section_content");
-        const proposalSectionCost    = ge("proposalSectionCost");
-        const addSectionApproveButton = ge("add_section_approve_button");
-        const addSectionButton       = ge("add_section_button");
+        // proposal manage
+        const proposalListTable = ge("proposal_list_table");
 
         // proposal create
-        const daoNameField                  = ge("dao_name_field");
-        const proposalNameField             = ge("proposal_name_field");
-        const proposalOwnerField            = ge("proposal_owner_name_field");
-        const creatingAccountSpan           = ge("proposal_creating_account"); // set to connected account
-        const proposalImageField            = ge("proposal_image_field");
-        const backgroundDataField           = ge("background_data_url_field");
-        const targetSubmissionDateField     = ge("target_submission_date_field");
-        
-        const proposalCurrencyField         = ge("proposal_currency_field"); // set default 0x3E1Da782E575889F1675eb59aF8396232716B5Ce       
-        const proposalSectionCreationFee    = ge("proposal_section_creation_fee_field");
-        const pproposalVoteCycleTimeField   = ge("proposal_section_vote_cycle_time_field");
-        const voteFeeField                  = ge("vote_fee_field");
+        const daoNameField = ge("dao_name_field");
+        const proposalNameField = ge("proposal_name_field");
+        const proposalOwnerField = ge("proposal_owner_name_field");
+        const creatingAccountSpan = ge("proposal_creating_account"); // set to connected account
+        const proposalImageField = ge("proposal_image_field");
+        const backgroundDataField = ge("background_data_url_field");
+        const targetSubmissionDateField = ge("target_submission_date_field");
 
-        const additionalInformation         = ge("additional_information");
+        const proposalCurrencyField = ge("proposal_currency_field"); // set default 0x3E1Da782E575889F1675eb59aF8396232716B5Ce       
+        const proposalSectionCreationFee = ge("proposal_section_creation_fee_field");
+        const pproposalVoteCycleTimeField = ge("proposal_section_vote_cycle_time_field");
+        const voteFeeField = ge("vote_fee_field");
 
-        const proposalCreationFeeSpan           = ge("proposal_creation_fee_span");
+        const additionalInformation = ge("additional_information");
+
+        const proposalCreationFeeSpan = ge("proposal_creation_fee_span");
         const proposalCreationFeeTokenContractSpan = ge("proposal_creation_fee_token_contract_span");
         const approveProposalCreationSpendButton = ge("approve_proposal_creation_spend_button");
-        const createReportButton                = ge("create_draft_proposal_button");
-        
-        const displayProposalCreateHash         = ge("proposal_create_hash_display");
+        const createReportButton = ge("create_draft_proposal_button");
+
+        const displayProposalCreateHash = ge("proposal_create_hash_display");
 
         // proposal display
-        const proposalImageDisplay              = ge("proposal_image_display");
-        const proposalStatusDisplay             = ge("proposal_status_display");
-        const proposalTitleSpan                 = ge("proposal_title_display");
-        const proposalDAODisplay                = ge("proposal_dao_display");
-        const backgroundDataDisplay             = ge("background_data_url_display");
-        const proposalOwnerNameDisplay          = ge("proposal_owner_name_display");
-        const proposalOwnerAddressDisplay       = ge("proposal_owner_address_display");
-        const proposalCurrencyDisplay           = ge("proposal_currency_display");
-        
-        const targetSubmissionDateDisplay       = ge("target_submission_date_display");
+        const proposalImageDisplay = ge("proposal_image_display");
+        const proposalStatusDisplay = ge("proposal_status_display");
+        const proposalTitleSpan = ge("proposal_title_display");
+        const proposalDAODisplay = ge("proposal_dao_display");
+        const backgroundDataDisplay = ge("background_data_url_display");
+        const proposalOwnerNameDisplay = ge("proposal_owner_name_display");
+        const proposalOwnerAddressDisplay = ge("proposal_owner_address_display");
+        const proposalCurrencyDisplay = ge("proposal_currency_display");
 
-        const sectionCreationFeeDisplay         = ge("section_creation_fee_span");
-        const sectionVoteCycleTimeDisplay       = ge("section_vote_cycle_time_display");
-        const sectionVoteFeeDisplay             = ge("section_vote_fee_span");
-        
+        const targetSubmissionDateDisplay = ge("target_submission_date_display");
 
-        const additionalInformationDisplay      = ge("additional_information_display");
-        
+        const sectionCreationFeeDisplay = ge("section_creation_fee_span");
+        const sectionVoteCycleTimeDisplay = ge("section_vote_cycle_time_display");
+        const sectionVoteFeeDisplay = ge("section_vote_fee_span");
+
+        const additionalInformationDisplay = ge("additional_information_display");
+        const withdrawProposalButtonDisplay = ge("withdraw_proposal_button");
+
+        const sectionTitleField = ge("section_title_field");
+        const sectionContentField = ge("section_content_field");
+        const addSectionCostDisplay = ge("add_section_cost_display");
+        const addSectionApproveButton = ge("add_section_approve_button");
+        const addSectionButton = ge("add_section_button");
+
         const ipfsRoot = "https://designproposal.infura-ipfs.io/ipfs/";
 
-        const iOpenRegisterAddress = "0x25661cca52F1Df6D143411E8216a79555de12F1E"; 
-        const iOpenRegisterContract = new web3.eth.Contract(iOpenRegisterAbi, iOpenRegisterAddress); 
+        const iOpenRegisterAddress = "0x25661cca52F1Df6D143411E8216a79555de12F1E";
+        const iOpenRegisterContract = new web3.eth.Contract(iOpenRegisterAbi, iOpenRegisterAddress);
 
-        var iDesignProposalAddress; 
-        var iDesignProposalContract; 
+        var iDesignProposalAddress;
+        var iDesignProposalContract;
 
-        var selectedProposalAddress; 
+        var selectedProposalAddress;
         var selectedProposalContract;
 
-        async function configureCoreContracts() { 
-            iOpenRegisterContract.methods.getAddress("RESERVED_DESIGN_PROPOSAL_CORE").call({from : account})
-            .then(function(response){
-                console.log(response);
-                iDesignProposalAddress = response; 
-                iDesignProposalContract = new web3.eth.Contract(iDesignProposalAbi, iDesignProposalAddress);               
-            })
-            .catch(function(err){
-                console.log(err);
-            })
-        }
-        function loadPageData(){
-            console.log("loading page data");
-            getCurrentProposals(); 
+        async function configureCoreContracts() {
+            iOpenRegisterContract.methods.getAddress("RESERVED_DESIGN_PROPOSAL_CORE").call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    iDesignProposalAddress = response;
+                    iDesignProposalContract = new web3.eth.Contract(iDesignProposalAbi, iDesignProposalAddress);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
         }
 
-        function getCurrentProposals() { 
-            
-            iDesignProposalContract.methods.getProposals().call({from : account})
-            .then(function(response){
-                console.log("design proposal response");
-                console.log(response);
-                console.log(proposalListTable.tBodies[0]);
-                proposalListTable.tBodies[0].innerHtml = "";
-                
-                var proposalAddresses = response;
-                if(proposalAddresses.length < 1 ) {
-                    var row = proposalListTable.tBodies[0].insertRow();
-                    var cell = row.insertCell();
-                    cell.setAttribute("colspan",4);
-                    var center = ce("center");                    
-                    center.append(text("NO PROPOSALS AVAILABLE"));
-                    cell.appendChild(center);
-                    return; 
-                }
-                console.log("loading proposalas ");
-                for(var x = 0; x < proposalAddresses.length; x++) {
-                    var proposalAddress = proposalAddresses[x];
-                    console.log("proposal : " + proposalAddress);
-                    addDisplayRow(proposalAddress);
-                }
-            })
-            .catch(function(err){
-                console.log(err);
-            })
+        function loadPageData() {
+            console.log("loading page data");
+            getCurrentProposals();
+        }
+
+        function getCurrentProposals() {
+
+            iDesignProposalContract.methods.getProposals().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log("design proposal response");
+                    console.log(response);
+                    console.log(proposalListTable.tBodies[0]);
+                    proposalListTable.tBodies[0].innerHtml = "";
+
+                    var proposalAddresses = response;
+                    if (proposalAddresses.length < 1) {
+                        var row = proposalListTable.tBodies[0].insertRow();
+                        var cell = row.insertCell();
+                        cell.setAttribute("colspan", 4);
+                        var center = ce("center");
+                        center.append(text("NO PROPOSALS AVAILABLE"));
+                        cell.appendChild(center);
+                        return;
+                    }
+                    console.log("loading proposalas ");
+                    for (var x = 0; x < proposalAddresses.length; x++) {
+                        var proposalAddress = proposalAddresses[x];
+                        console.log("proposal : " + proposalAddress);
+                        addDisplayRow(proposalAddress);
+                    }
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
         }
 
         function setImageDisplay(iProposalContract, display) {
-            iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE_IPFS_KEY").call({from : account})
-            .then(function(response){
-                console.log(response);
-                display.setAttribute("style", "background-image: url("+ipfsRoot+response+")");                
-            })
-            .catch(function(err){
-                console.log(err);
-            });
+            iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE_IPFS_KEY").call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    display.setAttribute("style", "background-image: url(" + ipfsRoot + response + ")");
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
         }
 
         function setImageDisplayInnerHTML(iProposalContract, display) {
-            iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE_IPFS_KEY").call({from : account})
-            .then(function(response){
-                console.log(response);
-                display.innerHTML = "<img src='"+ipfsRoot+response+"' class=\"w-75 h-75\" alt=\"\">";                
-            })
-            .catch(function(err){
-                console.log(err);
-            });
+            iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE_IPFS_KEY").call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    display.innerHTML = "<img src='" + ipfsRoot + response + "' class=\"w-75 h-75\" alt=\"\">";
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
         }
 
 
         function addDisplayRow(proposalAddress) {
-            
-            var iProposalContract = new web3.eth.Contract(iProposalAbi, proposalAddress); 
 
-            var row = proposalListTable.tBodies[0].insertRow(); 
+            var iProposalContract = new web3.eth.Contract(iProposalAbi, proposalAddress);
+
+            var row = proposalListTable.tBodies[0].insertRow();
 
             var a = ce("a");
-            a.setAttribute("href","javascript:displayProposal('"+proposalAddress+"')");
-        
+            a.setAttribute("href", "javascript:displayProposal('" + proposalAddress + "')");
+
             var imageCell = row.insertCell();
             addClassToElement(imageCell, "w-1");
             var imageSpan = ce("span");
@@ -632,118 +643,132 @@
 
 
             var b = ce("a");
-            b.setAttribute("href","javascript:displayProposal('"+proposalAddress+"')");
+            b.setAttribute("href", "javascript:displayProposal('" + proposalAddress + "')");
 
             var titleCell = row.insertCell();
-            addClassToElement(titleCell,"td" );
+            addClassToElement(titleCell, "td");
             var di = ce("div");
             di.setAttribute("class", "text");
-            
-            
-            iProposalContract.methods.getTitle().call({from : account})
-            .then(function(response){
-                console.log(response);                                
-                b.appendChild(text(response));
-                di.appendChild(b);
-                titleCell.append(di);
-            })
-            .catch(function(err){
-                console.log(err);
-            });
-            
-            var targetSubmitDateCell = row.insertCell(); 
-            addClassToElement(targetSubmitDateCell, "text-nowrap text-muted");
-            iProposalContract.methods.getTargetSubmissionDate().call({from : account})
-            .then(function(response){
-                console.log(response);
-                targetSubmitDateCell.append(text(formatDate(new Date(response*1000))));
-            })
-            .catch(function(err){
-                console.log(err);
-            });
-        }
-       
-        var arrived = false; 
 
-        function createDraftProposal() { 
-            var ipfsPropertyNames = ["PROPOSAL_INFO_IPFS_KEY","PROPOSAL_IMAGE_IPFS_KEY"];
+
+            iProposalContract.methods.getTitle().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    b.appendChild(text(response));
+                    di.appendChild(b);
+                    titleCell.append(di);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+            var targetSubmitDateCell = row.insertCell();
+            addClassToElement(targetSubmitDateCell, "text-nowrap text-muted");
+            iProposalContract.methods.getTargetSubmissionDate().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    targetSubmitDateCell.append(text(formatDate(new Date(response * 1000))));
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+        }
+
+        var arrived = false;
+
+        function createDraftProposal() {
+            var ipfsPropertyNames = ["PROPOSAL_INFO_IPFS_KEY", "PROPOSAL_IMAGE_IPFS_KEY"];
             let ipfsPropertyValues = new Array(2);
 
             var uintPropertyNames = ["VOTE_CYCLE_TIME_KEY", "VOTE_FEE_KEY", "SECTION_FEE_KEY"];
             var uintPropertyValues = new Array(3);
-            uintPropertyValues[0] = pproposalVoteCycleTimeField.value*60; 
-            uintPropertyValues[1] = voteFeeField.value; 
-            uintPropertyValues[2] = proposalSectionCreationFee.value;             
+            uintPropertyValues[0] = pproposalVoteCycleTimeField.value * 60;
+            uintPropertyValues[1] = voteFeeField.value;
+            uintPropertyValues[2] = proposalSectionCreationFee.value;
 
-            var dao                     = daoNameField.value;
-            var owner                   = account; 
-            var title                   = proposalNameField.value; 
-            var backgroundDataLink      = backgroundDataField.value; 
-            var currencyAddress         = proposalCurrencyField.value; 
-            var targetSubmissionDate    = new Date(targetSubmissionDateField.value).getTime();
-            console.log(targetSubmissionDate) ;
+            var dao = daoNameField.value;
+            var owner = account;
+            var title = proposalNameField.value;
+            var backgroundDataLink = backgroundDataField.value;
+            var currencyAddress = proposalCurrencyField.value;
+            var targetSubmissionDate = new Date(targetSubmissionDateField.value).getTime();
+            console.log(targetSubmissionDate);
 
             var proposalInfo = {};
-            proposalInfo.dao            = dao;
-            proposalInfo.ownerName      = proposalOwnerField.value;             
-            proposalInfo.proposalTitle  = title;
-            proposalInfo.additionalInfo = additionalInformation.value; 
-            proposalInfo.creationDate   = new Date().getTime(); 
+            proposalInfo.dao = dao;
+            proposalInfo.ownerName = proposalOwnerField.value;
+            proposalInfo.proposalTitle = title;
+            proposalInfo.additionalInfo = additionalInformation.value;
+            proposalInfo.creationDate = new Date().getTime();
 
             ipfs.add(JSON.stringify(proposalInfo))
-            .then(function(response){
-                console.log(response);
-                ipfsPropertyValues[0] = response[0].hash;
-               
-                ipfs.add(proposalImageField.files[0])
-                .then(function(response){
+                .then(function(response) {
                     console.log(response);
-                    ipfsPropertyValues[1] = response[0].hash; 
-                    
-                    create(owner, 
-                            title, 
-                            targetSubmissionDate, 
-                            backgroundDataLink, currencyAddress, 
-                            ipfsPropertyNames, ipfsPropertyValues, 
-                            uintPropertyNames, uintPropertyValues); 
+                    ipfsPropertyValues[0] = response[0].hash;
+
+                    ipfs.add(proposalImageField.files[0])
+                        .then(function(response) {
+                            console.log(response);
+                            ipfsPropertyValues[1] = response[0].hash;
+
+                            create(owner,
+                                title,
+                                targetSubmissionDate,
+                                backgroundDataLink, currencyAddress,
+                                ipfsPropertyNames, ipfsPropertyValues,
+                                uintPropertyNames, uintPropertyValues);
+                        })
+                        .catch(function(err) {
+                            console.log(err);
+                        });
+
                 })
-                .catch(function(err){
+                .catch(function(err) {
                     console.log(err);
                 });
-
-            })
-            .catch(function(err){
-                console.log(err);
-            });
         }
 
-        function create(owner, 
-                        title, 
-                        targetSubmissionDate, 
-                        backgroundDataLink, 
-                        currencyAddress, 
-                        ipfsPropertyNames, 
-                        ipfsPropertyValues, 
-                        uintPropertyNames, 
-                        uintPropertyValues) {
+        function create(owner,
+            title,
+            targetSubmissionDate,
+            backgroundDataLink,
+            currencyAddress,
+            ipfsPropertyNames,
+            ipfsPropertyValues,
+            uintPropertyNames,
+            uintPropertyValues) {
 
-                        iDesignProposalContract.methods.createProposal( owner, 
-                                                                        title, 
-                                                                        targetSubmissionDate, 
-                                                                        backgroundDataLink, 
-                                                                        currencyAddress, 
-                                                                        ipfsPropertyNames, 
-                                                                        ipfsPropertyValues, 
-                                                                        uintPropertyNames, 
-                                                                        uintPropertyValues).send({from : account})
-                                .then(function(response){
-                                    console.log(response);
-                                    displayProposalCreateHash.innerHTML = "PROPOSAL CREATED: " + response.blockHash;
-                                    getCurrentProposals(); 
-                                })
-                                .catch(function(err){
-                                    console.log(err);
-                                })
+            iDesignProposalContract.methods.createProposal(owner,
+                    title,
+                    targetSubmissionDate,
+                    backgroundDataLink,
+                    currencyAddress,
+                    ipfsPropertyNames,
+                    ipfsPropertyValues,
+                    uintPropertyNames,
+                    uintPropertyValues).send({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    displayProposalCreateHash.innerHTML = "PROPOSAL CREATED: " + response.blockHash;
+                    getCurrentProposals();
+                })
+                .catch(function(err) {
+                    console.log(err);
+                })
+
+        }
+
+        function withdrawProposal(proposalAddress) {
+
+        }
+
+        function withdrawSection(sectionAddress) {
 
         }
 
@@ -752,166 +777,357 @@
         }
 
         function displayProposal(proposalAddress) {
-            
+
             console.log("proposal address : " + proposalAddress);
             selectedProposalContract = new web3.eth.Contract(iProposalAbi, proposalAddress);
             setImageDisplayInnerHTML(selectedProposalContract, proposalImageDisplay);
 
+            withdrawProposalButtonDisplay.innerHTML = "<a href=\"javascript:withdrawProposal(" + proposalAddress + ")\" class=\"btn btn-danger\">Withdraw Proposal</a>";
 
-           selectedProposalContract.methods.getTitle().call({from : account})
-           .then(function(response){
-                console.log(response);
-                proposalTitleSpan.innerHTML = response; 
-           })
-           .catch(function(err){
-                console.log(err);
-           });
-
-           selectedProposalContract.methods.getStatus().call({from : account})
-           .then(function(response){
-                console.log(response);
-                proposalStatusDisplay.innerHTML = response; 
-           })
-           .catch(function(err){
-                console.log(err);
-           });
-
-           selectedProposalContract.methods.getTargetSubmissionDate().call({from : account})
-           .then(function(response){
-                console.log(response);
-                targetSubmissionDateDisplay.innerHTML = formatDate(new Date(response*1000));
-           })
-           .catch(function(err){
-                console.log(err);
-           });
-
-           selectedProposalContract.methods.getOwner().call({from : account})
-           .then(function(response){
-                console.log(response);
-                proposalOwnerAddressDisplay.innerHTML = response;
-           })
-           .catch(function(err){
-                console.log(err);
-           });
-
-           selectedProposalContract.methods.getBackgroundDataLink().call({from : account})
-           .then(function(response){
-                console.log(response);
-                backgroundDataDisplay.innerHTML = response;   
-           })
-           .catch(function(err){
-                console.log(err);
-           });
-           
-           selectedProposalContract.methods.getCurrencyAddress().call({from : account})
-           .then(function(response){
-                console.log(response);
-                var erc20Metadata = new web3.eth.Contract(iERC20MetadataAbi, response);
-                erc20Metadata.methods.symbol().call({from : account})
-                .then(function(response){
-                    var symbol = response; 
-                    console.log("called symbol");
+            selectedProposalContract.methods.getTitle().call({
+                    from: account
+                })
+                .then(function(response) {
                     console.log(response);
-                    proposalCurrencyDisplay.innerHTML = response; 
-                    erc20Metadata.methods.decimals().call({from : account})
-                    .then(function(response){
-                        console.log(response);
-                        var decimals = Number("1e"+response); 
-                        selectedProposalContract.methods.getPropertyUINT("VOTE_FEE_KEY").call({from : account})
-                        .then(function(response){
-                            console.log(response);
-                            console.log("decimals");
-                            sectionVoteFeeDisplay.innerHTML = (response / decimals) + " "+symbol;
-                        })
-                        .catch(function(err){
-                            console.log(err);
-                        });
-                        selectedProposalContract.methods.getPropertyUINT("SECTION_FEE_KEY").call({from : account})
-                        .then(function(response){
-                            console.log(response);
-                            console.log("decimals");
-                            sectionCreationFeeDisplay.innerHTML = (response / decimals) + " "+symbol;
-                        })
-                        .catch(function(err){
-                            console.log(err);
-                        });
-                    })
-                    .catch(function(err){
-                        console.log(err);
-                    });
-                })     
-                .catch(function(err){
+                    proposalTitleSpan.innerHTML = response;
+                })
+                .catch(function(err) {
                     console.log(err);
                 });
-           })
-           .catch(function(err){
-                console.log(err);
-           });
 
-           selectedProposalContract.methods.getPropertyIPFS("PROPOSAL_INFO_IPFS_KEY").call({from : account})
-           .then(function(response){
-                console.log(response);
-                populateIPFSSourcedData(response);
-           })
-           .catch(function(err){
-                console.log(err);
-           });
+            selectedProposalContract.methods.getStatus().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    proposalStatusDisplay.innerHTML = response;
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
 
-           selectedProposalContract.methods.getPropertyUINT("VOTE_CYCLE_TIME_KEY").call({from : account})
-           .then(function(response){
-                console.log(response);
-                sectionVoteCycleTimeDisplay.innerHTML = (response / 60) + " mins";
-           })
-           .catch(function(err){
-                console.log(err);
-           });
+            selectedProposalContract.methods.getTargetSubmissionDate().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    targetSubmissionDateDisplay.innerHTML = formatDate(new Date(response * 1000));
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+            selectedProposalContract.methods.getOwner().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    proposalOwnerAddressDisplay.innerHTML = response;
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+            selectedProposalContract.methods.getBackgroundDataLink().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    backgroundDataDisplay.innerHTML = response;
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+            selectedProposalContract.methods.getCurrencyAddress().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    var erc20Metadata = new web3.eth.Contract(iERC20MetadataAbi, response);
+                    erc20Metadata.methods.symbol().call({
+                            from: account
+                        })
+                        .then(function(response) {
+                            var symbol = response;
+                            console.log("called symbol");
+                            console.log(response);
+                            proposalCurrencyDisplay.innerHTML = response;
+                            erc20Metadata.methods.decimals().call({
+                                    from: account
+                                })
+                                .then(function(response) {
+                                    console.log(response);
+                                    var decimals = Number("1e" + response);
+                                    selectedProposalContract.methods.getPropertyUINT("VOTE_FEE_KEY").call({
+                                            from: account
+                                        })
+                                        .then(function(response) {
+                                            console.log(response);
+                                            console.log("decimals");
+                                            sectionVoteFeeDisplay.innerHTML = (response / decimals) + " " + symbol;
+                                        })
+                                        .catch(function(err) {
+                                            console.log(err);
+                                        });
+                                    selectedProposalContract.methods.getPropertyUINT("SECTION_FEE_KEY").call({
+                                            from: account
+                                        })
+                                        .then(function(response) {
+                                            console.log(response);
+                                            console.log("decimals");
+                                            sectionCreationFeeDisplay.innerHTML = (response / decimals) + " " + symbol;
+                                        })
+                                        .catch(function(err) {
+                                            console.log(err);
+                                        });
+                                })
+                                .catch(function(err) {
+                                    console.log(err);
+                                });
+                        })
+                        .catch(function(err) {
+                            console.log(err);
+                        });
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+            selectedProposalContract.methods.getPropertyIPFS("PROPOSAL_INFO_IPFS_KEY").call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    populateIPFSSourcedData(response);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+            selectedProposalContract.methods.getPropertyUINT("VOTE_CYCLE_TIME_KEY").call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    sectionVoteCycleTimeDisplay.innerHTML = (response / 60) + " mins";
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+            // load sections
+            loadProposalSections(selectedProposalContract);
         }
 
         function populateIPFSSourcedData(ipfsHash) {
             console.log(" hash : " + ipfsHash);
             fetch(ipfsRoot + ipfsHash)
-            .then(function(response){
-                console.log(response);
-                response.json()
-                .then(function(response){
+                .then(function(response) {
                     console.log(response);
-                    var data = response; 
-                    additionalInformationDisplay.innerHTML = data.additionalInfo;
-                    proposalOwnerNameDisplay.innerHTML = data.ownerName; 
-                    proposalDAODisplay.innerHTML = data.dao; 
-                })        
-            })
-            .catch(function(err){
-                console.log(err);
-           });
+                    response.json()
+                        .then(function(response) {
+                            console.log(response);
+                            var data = response;
+                            additionalInformationDisplay.innerHTML = data.additionalInfo;
+                            proposalOwnerNameDisplay.innerHTML = data.ownerName;
+                            proposalDAODisplay.innerHTML = data.dao;
+                        })
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
         }
 
-        function addSection(){ 
-            ipfs.add(proposalSectionContent.value)
-            .then(function(response){
-                console.log(response);
-                iProposalContract.methods.addSection(proposalSectionTitle.value, proposalSectionContent.value).send({from :account})
-                .then(function(response){
-                    mintSectionNFT(mintAddress, user, proposalSectionContent.value, proposalSectionTitle.value);
-                })
-                .catch(function(err){
-                     console.log(err);
-                });
-                
-            })
-            .catch(function(err){
-                console.log(err);
-            });             
+        function clearSectionEntry() {
+            sectionTitleField.value = "";
+            sectionContentField.value = "";
         }
+
+        function addSection() {
+            ipfs.add(sectionContentField.value)
+                .then(function(response) {
+                    console.log(response);
+                    var ipfsHash = response;
+                    iProposalContract.methods.addSection(sectionTitleField.value, ipfsHash).send({
+                            from: account
+                        })
+                        .then(function(response) {
+                            // clear section entry 
+                            clearSectionEntry();
+                            // reload sections 
+                            loadProposalSections(iProposalContract);
+                            // mintSectionNFT(mintAddress, user, proposalSectionContent.value, proposalSectionTitle.value);
+                        })
+                        .catch(function(err) {
+                            console.log(err);
+                        });
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+        }
+
+        function loadProposalSections(selectedProposalContract) {
+            proposalSections.innerHTML = "";
+            selectedProposalContract.methods.getSections().call({
+                    from: account
+                })
+                .then(function(response) {
+                    var sections = response;
+                    if (sections.length < 1) {
+                        sectionDisplay.innerHTML = "NO SECTIONS TO DISPLAY - ADD SECTION TO BEGIN";
+                        return;
+                    }
+                    for (var x = 0; x < sections.length; x++) {
+                        var section = sections[x];
+                        displaySection(section);
+                    }
+
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+        }
+
+        function displaySection(sectionAddress) {
+            iSectionContract = new web3.eth.Contract(iSectionAbi, sectionAddress);
+
+            var holder = ce("div");
+            holder.setAttribute("class", "col-md-3 col-lg-12");
+
+            var card = ce("div");
+            card.setAttribute("class", "card");
+            holder.append(card);
+
+            var cardBody = ce("div");
+            cardBody.setAttribute("class", "card-body");
+            card.append(cardBody);
+
+            var h3 = ce("h3");
+            h3.setAttribute("class", "card-title");
+            iSectionContract.methods.getTitle().call({
+                    from: account
+                }) // remember to redeploy contracts 
+                .then(function(response) {
+                    console.log(response);
+                    h3.append(text(response));
+                    cardBody.append(h3);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+            var p = ce("p");
+            p.setAttribute("class", "text-muted");
+            iSectionContract.methods.getContent().call({
+                    from: account
+                })
+                .then(function(response) {
+                    console.log(response);
+                    var ipfsHash = response;
+                    fetch(ipfsRoot + ipfsHash)
+                        .then(function(response) {
+                            console.log(response);
+                            p.appendChild(text(response));
+                            cardBody.append(p);
+                        })
+                        .catch(function(err) {
+                            console.log(err);
+                        });
+
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+
+            var cardFooter = ce("div");
+            cardFooter.setAttribute("class", "card-footer");
+            card.append(cardFooter);
+
+            var cardFooterHolder = ce("div");
+            cardFooterHolder.setAttribute("class", "d-flex");
+            cardFooter.append(cardFooterHolder);
+
+            var voteCostSpan = ce("span");
+            voteCostSpan.setAttribute("class", "mt-3 badge bg-cyan ms-auto mt-2 d-flex");
+
+            var voteCycleTimeRemaining = ce("span");
+            voteCycleTimeRemaining.setAttribute("class", "mt-3 badge bg-danger ms-auto mt-2 d-flex");
+            iSectionContract.methods.getCycleTimeRemaining().call({
+                    from: account
+                })
+                .then(function(response) {
+                    var timeRemaining = formatTimeRemaining(response);
+                    var buttonClass = getTimeRemainingButtonClass(iSectionContract);
+                    voteCycleTimeRemaining.append(text("Time Remaining : " + timeRemaining));
+                    voteCycleTimeRemaining.append("class", buttonClass);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+            var approveButton = ce("a");
+            approveButton.setAttribute("href", "javascript:approve(" + proposalCurrencyAddress + "," + voteCost + ")");
+            approveButton.setAttribute("class", "btn btn-warning ms-auto");
+
+            var voteButton = ce("a");
+            voteButton.setAttribute("href", "#");
+            voteButton.setAttribute("class", "btn btn-danger ms-auto");
+            voteButton.setAttribute("data-bs-toggle", "modal");
+            voteButton.setAttribute("data-bs-target", "#modal-vote");
+            voteButton.appendChild(text("Vote"));
+
+
+            /* 
+            <div class="col-md-3 col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Section Title</h3>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                    </div>
+                    <!-- Card footer -->
+                    <div class="card-footer">
+                        <div class="d-flex">
+                            
+                            <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
+                            <span id="vote_cycle_time_remaining" class="mt-3 badge bg-danger ms-auto mt-2 d-flex">Time Remaining: 10 mins</span>
+                                
+                            <a href="#" class="btn btn-warning ms-auto">Approve</a>
+                            <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            */
+        }
+
+        function approve(address, amount) {
+
+        }
+
+        function buildOpen() {
+
+        }
+
+        function buildClosed() {
+
+        }
+
+        function buildWithdrawn() {
+
+        }
+
+
         const form = new FormData();
 
         const options = {
-                            method: 'POST',
-                            body: form,
-                            headers: {
-                                "Authorization": "222b05ce-c37f-4bdd-b40e-2a94f3efa570",
-                            },                                
-                        };
+            method: 'POST',
+            body: form,
+            headers: {
+                "Authorization": "222b05ce-c37f-4bdd-b40e-2a94f3efa570",
+            },
+        };
 
         const mintResponse = document.getElementById("mint_result");
 
@@ -948,17 +1164,21 @@
                         seconds: "numeric"
                     }
                     var localized = date.toLocaleDateString("en-UK", options);
-                    console.log(responseJson);  
+                    console.log(responseJson);
                 })
-                .catch(function(err){
+                .catch(function(err) {
                     console.log(err);
                 })
             console.log("minted");
         }
 
-        var dateOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+        var dateOptions = {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+        };
 
-        function formatDate(date){
+        function formatDate(date) {
             return date.toLocaleDateString("en-UK", dateOptions);
         }
 
