@@ -23,7 +23,7 @@ contract Proposal is IProposal, IOpenVersion {
     using LOpenUtilities for string; 
 
     string constant name                = "PROPOSAL";
-    uint256 constant version            = 5; 
+    uint256 constant version            = 7;  
 
     string constant sectionFactoryCA    = "RESERVED_DESIGN_PROPOSAL_SECTION_FACTORY_CORE";
 
@@ -191,6 +191,7 @@ contract Proposal is IProposal, IOpenVersion {
                                                             _title, 
                                                             _descriptionIpfsHash, 
                                                             uintPropertyByName[voteCycleTimeKey]);
+        knownSections[_sectionAddress] = true;
         sections.push(address(_sectionAddress));
         registerContribution(msg.sender, "SECTION_CONTRIBUTION");        
         return _sectionAddress;         

@@ -23,7 +23,7 @@ contract DesignProposal is OpenRolesSecureCore, IDesignProposal, IDPManagement, 
         using LOpenUtilities for address; 
 
         string constant name = "RESERVED_DESIGN_PROPOSAL_CORE";
-        uint256 constant version = 3; 
+        uint256 constant version = 4; 
 
         string constant registryCA        = "RESERVED_OPEN_REGISTER_CORE";  
         string constant proposalFactoryCA = "RESERVED_DESIGN_PROPOSAL_FACTORY_CORE";
@@ -149,12 +149,13 @@ contract DesignProposal is OpenRolesSecureCore, IDesignProposal, IDPManagement, 
         }
 
         function registerContributor(address _contributor) external returns (bool _registered) {
-            checkContributor(_contributor);
+            checkProposal();
             proposalsByContributor[_contributor].push(msg.sender);
             return true; 
         }
 
         function deregisterContributor(address _contributor) external returns (bool _deregistered) {
+            checkProposal();
             checkContributor(_contributor);
             proposalsByContributor[_contributor] = msg.sender.remove(proposalsByContributor[_contributor]);
             return true;
@@ -193,8 +194,12 @@ contract DesignProposal is OpenRolesSecureCore, IDesignProposal, IDPManagement, 
             return _id; 
         }
 
-        function checkContributor(address _contributor) view internal returns (bool) { 
+        function checkProposal() view internal returns (bool) {
             require(knownProposal[msg.sender], "unknown proposal");
+            return true; 
+        }
+
+        function checkContributor(address _contributor) view internal returns (bool) {             
             IProposal proposal_ = IProposal(msg.sender);
             require(proposal_.isContributor(_contributor)," unknown contributor ");
             return true; 
