@@ -10,7 +10,6 @@ The key features of Design Proposal are the following:
 - Proposal Creation - Design proposal enables users to create draft serverless proposals on chain utilising IPFS content addressing to manage large data
 - Section Based Voting - Voting on each section contributes to the overall status of the Proposal
 - Automated Vote Tally - Votes are tallied autonomously on chain determining the status of the Section and consequently the Proposal 
-- Automated Section Minting - Each contributed section is minted as an NFT enabling the user to later repurpose and / or evidence their contribution
 
 ## Origin
 This project was started at [EthGlobal HackFS 2022](https://ethglobal.com/showcase/designproposal-7ii7b) and was winner of the NFT Port Pool Prize
