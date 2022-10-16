@@ -25,6 +25,9 @@ This project uses IPFS Content Addressing OpenBlock EI to manage it's back end c
 <br/>[Open Roles](https://github.com/Block-Star-Logic/open-roles)
 <br/>[Open Register](https://github.com/Block-Star-Logic/open-register)
 
+The Project has been deployed on the **Sepolia Testnet**
+Note: **Payments have been disabled**
+
 The useable version of the project is deployed on the Sepolia Testnet at the addresses below: 
 
 |Address                        | Contract                                 |
@@ -37,7 +40,7 @@ The useable version of the project is deployed on the Sepolia Testnet at the add
 |OpenRolesDerivativeTypesAdmin  |0x8168B7ddf5Ec7110E93A937D21a2f5B8b12dB824|
 |OpenRoles                      |0x3f79bf7c3291A8f85a0E7B770A5FFf161d5133B5|
 |OpenRolesAdmin                 |0x2B704Fa8C2E481f6DECf8D0F16CecfE3d76952E4|
-|Test USDC                      |0x3E1Da782E575889F1675eb59aF8396232716B5Ce|
+|**Test USDC**                  |0x3E1Da782E575889F1675eb59aF8396232716B5Ce|
 
 
 **UI**
