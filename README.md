@@ -3,7 +3,24 @@ Design proposal is a new way for DAOs to develop their proposals taking advantag
 enable contributors to a certain topic to assemble a proposal that is based on micro votes and independent contributions. At the end of the proposal creation period 
 the final agreed sections are presented together for final editing by the originator of the proposal. 
 
-This project uses OpenBlock EI to manage it's back end contracts, therefore if you would like to deploy your own instance of the project please check out the following projects: 
+## Features 
+The key features of Design Proposal are the following: 
+- Proposal Creation - Design proposal enables users to create draft serverless proposals on chain utilising IPFS content addressing to manage large data
+- Section Based Voting - Voting on each section contributes to the overall status of the Proposal
+- Automated Vote Tally - Votes are tallied autonomously on chain determining the status of the Section and consequently the Proposal 
+- Automated Section Minting - Each contributed section is minted as an NFT enabling the user to later repurpose and / or evidence their contribution
+
+## Origin
+This project was started at [EthGlobal HackFS 2022](https://ethglobal.com/showcase/designproposal-7ii7b) and was winner of the NFT Port Pool Prize
+
+## Funding 
+This project is a recipient of the Filecoin Next Steps Microgrant 
+
+## Commercial 
+This project is provided Opensource under Apache 2.0
+
+## Technical Data
+This project uses IPFS Content Addressing OpenBlock EI to manage it's back end contracts, therefore if you would like to deploy your own instance of the project please check out the following projects: 
 <br/>[Open Roles](https://github.com/Block-Star-Logic/open-roles)
 <br/>[Open Register](https://github.com/Block-Star-Logic/open-register)
 
