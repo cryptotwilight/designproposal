@@ -10,7 +10,6 @@ The key features of Design Proposal are the following:
 - Proposal Creation - Design proposal enables users to create draft serverless proposals on chain utilising IPFS content addressing to manage large data
 - Section Based Voting - Voting on each section contributes to the overall status of the Proposal
 - Automated Vote Tally - Votes are tallied autonomously on chain determining the status of the Section and consequently the Proposal 
-- Automated Section Minting - Each contributed section is minted as an NFT enabling the user to later repurpose and / or evidence their contribution
 
 ## Origin
 This project was started at [EthGlobal HackFS 2022](https://ethglobal.com/showcase/designproposal-7ii7b) and was winner of the NFT Port Pool Prize
@@ -26,19 +25,22 @@ This project uses IPFS Content Addressing OpenBlock EI to manage it's back end c
 <br/>[Open Roles](https://github.com/Block-Star-Logic/open-roles)
 <br/>[Open Register](https://github.com/Block-Star-Logic/open-register)
 
+The Project has been deployed on the **Sepolia Testnet**
+Note: **Payments have been disabled**
+
 The useable version of the project is deployed on the Sepolia Testnet at the addresses below: 
 
 |Address                        | Contract                                 |
 |-------------------------------|------------------------------------------|
-|DesignProposal                 |0x00292Eb1078a3deB797931446ADAb2d1f5e8E3Ce|
-|ProposalFactory                |0xe36864259f5F199884081c429BeF7F4De452D1A7|
-|SectionFactory                 |0xa607447b276ECB8750eC6eaC006cefC0cfaDaDd2|
+|DesignProposal                 |0x1dA4D4C7f512b6C19166F015E8C68e6baC864594|
+|ProposalFactory                |0xFf6A82Ea712bFdc99EE389388DDaD6851086e773|
+|SectionFactory                 |0x4c93e25c58Ab63936765D9190F7447b565DF0F4D|
 |OpenRegister                   |0x25661cca52F1Df6D143411E8216a79555de12F1E|
 |OpenRolesDerivativesAdmin      |0xa352Bd6b449e29bBdC5e994dcf11e268B6e69A16|
 |OpenRolesDerivativeTypesAdmin  |0x8168B7ddf5Ec7110E93A937D21a2f5B8b12dB824|
 |OpenRoles                      |0x3f79bf7c3291A8f85a0E7B770A5FFf161d5133B5|
 |OpenRolesAdmin                 |0x2B704Fa8C2E481f6DECf8D0F16CecfE3d76952E4|
-|Test USDC                      |0x3E1Da782E575889F1675eb59aF8396232716B5Ce|
+|**Test USDC**                  |0x3E1Da782E575889F1675eb59aF8396232716B5Ce|
 
 
 **UI**
