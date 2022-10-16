@@ -130,8 +130,10 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>Proposal</th>
+                                                                <th>DAO</th>
                                                                 <th>Title</th>
-                                                                <th>Target Submit Date</th>
+                                                                <th>Status</th>
+                                                                <th>Target Submit Date</th>                                                                
                                                             </tr>
                                                         </thead>
                                                         <tbody>                            
@@ -150,172 +152,148 @@
                                                 <div class="row row-0">
                                                     <div class="col-3">
                                                         <h4>PROPOSAL STATUS: <span id="proposal_status_display">${proposal status}</span></h4>
-                                <span id="proposal_image_display"><img src="./static/photos/2854fd67ddbd6217.jpg" class="w-75 h-75 " alt="Card side image"></span>
-                            </div>
-                            <div class="col-9">
-                                <div class="card-body">
-                                    <h3 class="card-title"><span id="proposal_title_display">${proposal title}</span></h3>
-                                    <div class="row">
-                                        <div class="col-lg-3"><label class="form-label">DAO</label><a id="proposal_dao_display" href="">${dao}</a></div>
-                                        <div class="col-lg-3"><label class="form-label">Proposal Owner</label> <span id="proposal_owner_name_display">${name}</span><br/><span id="proposal_owner_address_display">${0x000000000000000000000000}</span></div>
-                                        <div class="col-lg-3"><label class="form-label">Target Submission Date</label> <span id="target_submission_date_display">${2022/10/31}</span></div>
-                                        <div class="col-lg-3"><label class="form-label">Proposal Background</label><a id="background_data_url_display" href="">${background data}</a></div>
-                                        <div class="col-lg-3"><label class="form-label">Proposal Currency</label> <span id="proposal_currency_display">${USDC}</span></div>
-                                        <div class="col-lg-3"><label class="form-label">Section Addition Fee</label> <span id="section_creation_fee_span">${45 USDC}</span></div>
-                                        <div class="col-lg-3"><label class="form-label">Cycle Time</label> <span id="section_vote_cycle_time_display">${10 mins}</span></div>
-                                        <div class="col-lg-3"><label class="form-label">Vote Fee</label> <span id="section_vote_fee_span">${5 USDC}</span></div>
-                                        <div class="col-lg-3"><span id="withdraw_proposal_button"></span></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <h4>Additional Information</h4>
-                                            <p class="text-muted"><span id="additional_information_display">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </span>
-            </div>
-            <!-- END PROPOSAL INFO -->
-
-            <!-- ADD SECTION -->
-            <div class="col-sm-6 col-lg-12">
-                <span id="add_section_span">
-                                        <div class="card">
-                                            <div class="card-body ">
-                                                <span class="form-label-description">${proposal add message}</span>
-                <div class="mb-3">
-                    <label class="form-label">Add Proposal Section </label>
-                    <input id="section_title_field" type="text" placeholder="enter section title" class="form-control" />
-                    <hr>
-                    <textarea id="section_content_field" class="form-control" name="example-textarea-input" rows="6" placeholder="Content..">Oh! Come and see the violence inherent in the system! Help, help, I'm being repressed! We shall say 'Ni' again to you, if you do not appease us. I'm not a witch. I'm not a witch. Camelot!</textarea>
-                </div>
-
-                <div class="mt-2 d-flex">
-                    <span id="add_section_cost_display" class="badge bg-success ms-auto mt-2 d-flex"> Section Cost: 5 USDC</span> &nbsp;
-                    <a id="add_section_approve_button" href="#" class="btn btn-warning ms-auto">Approve</a> &nbsp;
-                    <a id="add_section_button" href="#" class="btn btn-primary ms-auto">Add Section</a>
-                </div>
-            </div>
-        </div>
-        </span>
-    </div>
-    </td>
-    </tr>
-    <tr>
-
-        <td style="vertical-align:top">
-            <span id="proposal_sections"> 
-                                    <div class="col-md-3 col-lg-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h3 class="card-title">Section Title</h3>
-                                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                                                        <span id="proposal_image_display"><img src="./static/photos/2854fd67ddbd6217.jpg" class="w-75 h-75 " alt="Card side image"></span>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div class="card-body">
+                                                            <h3 class="card-title"><span id="proposal_title_display">${proposal title}</span></h3>
+                                                            <div class="row">
+                                                                <div class="col-lg-3"><label class="form-label">DAO</label><a id="proposal_dao_display" href="">${dao}</a></div>
+                                                                <div class="col-lg-3"><label class="form-label">Proposal Owner</label> <span id="proposal_owner_name_display">${name}</span><br/><span id="proposal_owner_address_display">${0x000000000000000000000000}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Target Submission Date</label> <span id="target_submission_date_display">${2022/10/31}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Proposal Background</label><a id="background_data_url_display" href="">${background data}</a></div>
+                                                                <div class="col-lg-3"><label class="form-label">Proposal Currency</label> <span id="proposal_currency_display">${USDC}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Section Addition Fee</label> <span id="section_creation_fee_span">${45 USDC}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Cycle Time</label> <span id="section_vote_cycle_time_display">${10 mins}</span></div>
+                                                                <div class="col-lg-3"><label class="form-label">Vote Fee</label> <span id="section_vote_fee_span">${5 USDC}</span></div>
+                                                                <div class="col-lg-3"><span id="withdraw_proposal_button_display"></span></div>
+                                                                <div class="col-lg-3"><span id="add_proposal_section_button_display"></span></div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <h4>Additional Information</h4>
+                                                                    <p class="text-muted"><span id="additional_information_display">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</span></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <span id="proposal_message_display"class="form-label-description"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!-- Card footer -->
-                                            <div class="card-footer">
-                                                <div class="d-flex">
-                                                    
-                                                    <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
-            <span id="vote_cycle_time_remaining" class="mt-3 badge bg-danger ms-auto mt-2 d-flex">Time Remaining: 10 mins</span>
-
-            <a href="#" class="btn btn-warning ms-auto">Approve</a>
-            <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
-            </div>
-            </div>
-            </div>
-            </div>
-
-            <div class="col-md-3 col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Section Title</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
-                    </div>
-                    <!-- Card footer -->
-                    <div class="card-footer">
-                        <div class="d-flex">
-                            <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
-                            <span id="vote_cycle_time_remaining" class="mt-3 badge bg-warning ms-auto mt-2 d-flex">Time Remaining: 20 mins</span>
-
-                            <a href="#" class="btn btn-warning ms-auto">Approve</a>
-                            <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Section Title</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
-                    </div>
-                    <!-- Card footer -->
-                    <div class="card-footer">
-                        <div class="d-flex">
-
-                            <table>
-                                <tr>
-                                    <td>Author</td>
-                                    <td><b>Total Vote Funding:</b></td>
-                                    <td>Total Votes Cast</td>
-                                    <td>Votes For</td>
-                                    <td>Votes Against</td>
-                                    <td><b>Vote Result</b></td>
+                                        </div>
+                                        </span>
+                                    </div>
+                                    <!-- END PROPOSAL INFO -->                
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><span id="section_author" class="mt-3 badge">0xEEB35AC9A858C4CF83A301E791705A0849A7FD8F</span></td>
-                                    <td><span id="vote_cost" class="mt-3 badge bg-orange"> 10 USDC</span></td>
-                                    <td><span id="vote_cost" class="mt-3 badge bg-orange"> 5</span></td>
-                                    <td><span id="vote_for" class="mt-3 badge bg-green-lt">3</span></td>
-                                    <td><span id="vote_for" class="mt-3 badge bg-pink-lt">2</span></td>
-                                    <td><span id="vote_cycle_time_remaining" class="mt-3 badge bg-success">Accepted</span></td>
+                                    <td style="vertical-align:top">
+                                        <span id="proposal_section_display"> 
+                                            <div class="col-md-3 col-lg-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h3 class="card-title">Section Title</h3>
+                                                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                                                    </div>
+                                                    <!-- Card footer -->
+                                                    <div class="card-footer">
+                                                        <div class="d-flex">                                                                                
+                                                            <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
+                                                            <span id="vote_cycle_time_remaining" class="mt-3 badge bg-danger ms-auto mt-2 d-flex">Time Remaining: 10 mins</span>
+
+                                                            <a href="#" class="btn btn-warning ms-auto">Approve</a>
+                                                            <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-lg-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h3 class="card-title">Section Title</h3>
+                                                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                                                    </div>
+                                                    <!-- Card footer -->
+                                                    <div class="card-footer">
+                                                        <div class="d-flex">
+                                                            <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
+                                                            <span id="vote_cycle_time_remaining" class="mt-3 badge bg-warning ms-auto mt-2 d-flex">Time Remaining: 20 mins</span>
+
+                                                            <a href="#" class="btn btn-warning ms-auto">Approve</a>
+                                                            <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-lg-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h3 class="card-title">Section Title</h3>
+                                                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
+                                                    </div>
+                                                    <!-- Card footer -->
+                                                    <div class="card-footer">
+                                                        <div class="d-flex">
+
+                                                            <table>
+                                                                <tr>
+                                                                    <td>Author</td>
+                                                                    <td><b>Total Vote Funding:</b></td>
+                                                                    <td>Total Votes Cast</td>
+                                                                    <td>Votes For</td>
+                                                                    <td>Votes Against</td>
+                                                                    <td><b>Vote Result</b></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span id="section_author" class="mt-3 badge">0xEEB35AC9A858C4CF83A301E791705A0849A7FD8F</span></td>
+                                                                    <td><span id="vote_cost" class="mt-3 badge bg-orange"> 10 USDC</span></td>
+                                                                    <td><span id="vote_cost" class="mt-3 badge bg-orange"> 5</span></td>
+                                                                    <td><span id="vote_for" class="mt-3 badge bg-green-lt">3</span></td>
+                                                                    <td><span id="vote_for" class="mt-3 badge bg-pink-lt">2</span></td>
+                                                                    <td><span id="vote_cycle_time_remaining" class="mt-3 badge bg-success">Accepted</span></td>
+                                                                </tr>
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </td>
                                 </tr>
                             </table>
-
                         </div>
                     </div>
                 </div>
-            </div>
-            </span>
-
-        </td>
-    </tr>
-    </table>
-
-
-
-    </div>
-
-
-
-    </div>
-    </div>
-    <footer class="footer footer-transparent d-print-none">
-        <div class="container-xl">
-            <div class="row text-center align-items-center flex-row-reverse">
-                <div class="col-lg-auto ms-lg-auto">
-                </div>
-                <div class="col-12 col-lg-auto mt-3 mt-lg-0">
-                    <ul class="list-inline list-inline-dots mb-0">
-                        <li class="list-inline-item">
-                            Copyright &copy; 2022
-                            <a href="https://www.blockstarlogic.com" class="link-secondary">Block 	
-                        <font color="red">&#9733;</font> Logic</a>.
-                        </li>
-                    </ul>
-                </div>
+                <footer class="footer footer-transparent d-print-none">
+                    <div class="container-xl">
+                        <div class="row text-center align-items-center flex-row-reverse">
+                            <div class="col-lg-auto ms-lg-auto">
+                            </div>
+                            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                                <ul class="list-inline list-inline-dots mb-0">
+                                    <li class="list-inline-item">
+                                        Copyright &copy; 2022
+                                        <a href="https://www.blockstarlogic.com" class="link-secondary">Block 	
+                                    <font color="red">&#9733;</font> Logic</a>.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
-    </footer>
-    </div>
-    </div>
 
     <!-- Start Modals -->
+ 
+
     <!-- Vote Modal -->
     <div class="modal modal-blur fade" id="modal-vote" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -326,18 +304,56 @@
                 </div>
                 <div class="modal-body">
                     <h4>Vote Comment</h4>
-                    <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="enter vote comment ..."></textarea>
+                    <textarea class="form-control" id="vote_comment" name="example-textarea-input" rows="6" placeholder="enter vote comment ..."></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Up Vote</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Down Vote</button>
+                    <button type="button" id="up_vote_button" class="btn btn-warning" data-bs-dismiss="modal">Up Vote</button>
+                    <button type="button" id="down_vote_button" class="btn btn-danger" data-bs-dismiss="modal">Down Vote</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Create Modal -->
-    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Create Section Modal -->
+    <div class="modal modal-blur fade" id="modal-section" tabindex="-1" role="dialog" aria-hidden="true">      
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Draft Section</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row"> 
+                        <div class="col-lg-12">
+                            <label class="form-label">Section Cost : </label><span id="add_section_cost_display"></span>&nbsp;<span id="add_section_cost_currency_symbol_display"></span> 
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Section Title</label>
+                        <input id="section_title_field" type="text" class="form-control" name="example-text-input" placeholder="..enter section title">
+                    </div>
+                    <div class="mb-12">
+                        <label class="form-label">Section Content</label>
+                        <textarea id="section_content_field" type="text" class="form-control" name="example-text-input" placeholder="..enter section content"></textarea>
+                    </div> 
+                    <div class="row"> 
+                        <span id="draft_section_message"></span>
+                    </div>                                                 
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:clearSectionEntry()" class="btn btn-link link-secondary" data-bs-dismiss="modal">Cancel</a>               
+                    <div class="mt-2 d-flex">                       
+                        <span id="add_section_approve_button_display"></span>
+                        <span id="add_section_button_display"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Proposal Modal -->
+    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">      
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -505,34 +521,47 @@
         const proposalCreationFeeSpan = ge("proposal_creation_fee_span");
         const proposalCreationFeeTokenContractSpan = ge("proposal_creation_fee_token_contract_span");
         const approveProposalCreationSpendButton = ge("approve_proposal_creation_spend_button");
-        const createReportButton = ge("create_draft_proposal_button");
+        const createReportButton                = ge("create_draft_proposal_button");
 
-        const displayProposalCreateHash = ge("proposal_create_hash_display");
+        const displayProposalCreateHash         = ge("proposal_create_hash_display");
 
         // proposal display
-        const proposalImageDisplay = ge("proposal_image_display");
-        const proposalStatusDisplay = ge("proposal_status_display");
-        const proposalTitleSpan = ge("proposal_title_display");
-        const proposalDAODisplay = ge("proposal_dao_display");
-        const backgroundDataDisplay = ge("background_data_url_display");
-        const proposalOwnerNameDisplay = ge("proposal_owner_name_display");
-        const proposalOwnerAddressDisplay = ge("proposal_owner_address_display");
-        const proposalCurrencyDisplay = ge("proposal_currency_display");
+        const proposalImageDisplay              = ge("proposal_image_display");
+        const proposalStatusDisplay             = ge("proposal_status_display");
+        const proposalTitleSpan                 = ge("proposal_title_display");
+        const proposalDAODisplay                = ge("proposal_dao_display");
+        const backgroundDataDisplay             = ge("background_data_url_display");
+        const proposalOwnerNameDisplay          = ge("proposal_owner_name_display");
+        const proposalOwnerAddressDisplay       = ge("proposal_owner_address_display");
+        const proposalCurrencyDisplay           = ge("proposal_currency_display");
+        const proposalSectionMessage           = ge("");
 
-        const targetSubmissionDateDisplay = ge("target_submission_date_display");
+        const targetSubmissionDateDisplay       = ge("target_submission_date_display");
 
-        const sectionCreationFeeDisplay = ge("section_creation_fee_span");
-        const sectionVoteCycleTimeDisplay = ge("section_vote_cycle_time_display");
-        const sectionVoteFeeDisplay = ge("section_vote_fee_span");
+        const sectionCreationFeeDisplay         = ge("section_creation_fee_span");
+        const sectionVoteCycleTimeDisplay       = ge("section_vote_cycle_time_display");
+        const sectionVoteFeeDisplay             = ge("section_vote_fee_span");
 
-        const additionalInformationDisplay = ge("additional_information_display");
-        const withdrawProposalButtonDisplay = ge("withdraw_proposal_button");
+        const additionalInformationDisplay      = ge("additional_information_display");
+        const withdrawProposalButtonDisplay     = ge("withdraw_proposal_button_display");
+        const addProposalSectionButtonDisplay   = ge("add_proposal_section_button_display");
+        // proposal end 
 
-        const sectionTitleField = ge("section_title_field");
-        const sectionContentField = ge("section_content_field");
-        const addSectionCostDisplay = ge("add_section_cost_display");
-        const addSectionApproveButton = ge("add_section_approve_button");
-        const addSectionButton = ge("add_section_button");
+        // add section modal 
+        const sectionTitleField                     = ge("section_title_field");
+        const sectionContentField                   = ge("section_content_field");
+        const addSectionCostDisplay                 = ge("add_section_cost_display");
+        const addSectionCostCurrencyDisplaySymbol   = ge("add_section_cost_currency_symbol_display");        
+        const addSectionApproveButtonDisplay        = ge("add_section_approve_button_display");
+        const addSectionButtonDisplay               = ge("add_section_button_display");
+        const draftSectionMessage                   = ge("draft_section_message");
+        // end modal 
+
+        const proposalMessageDisplay          = ge("proposal_message_display");
+        const sectionDisplay                 = ge("proposal_section_display");
+     
+
+
 
         const ipfsRoot = "https://designproposal.infura-ipfs.io/ipfs/";
 
@@ -545,14 +574,16 @@
         var selectedProposalAddress;
         var selectedProposalContract;
 
-        async function configureCoreContracts() {
+       async function configureCoreContracts() {
             iOpenRegisterContract.methods.getAddress("RESERVED_DESIGN_PROPOSAL_CORE").call({
                     from: account
                 })
                 .then(function(response) {
                     console.log(response);
                     iDesignProposalAddress = response;
-                    iDesignProposalContract = new web3.eth.Contract(iDesignProposalAbi, iDesignProposalAddress);
+                    iDesignProposalContract = getContract(iDesignProposalAbi, iDesignProposalAddress);
+                    console.log(iDesignProposalContract);
+                    return iDesignProposalContract;
                 })
                 .catch(function(err) {
                     console.log(err);
@@ -561,7 +592,12 @@
 
         function loadPageData() {
             console.log("loading page data");
+            console.log(iDesignProposalContract);
             getCurrentProposals();
+        }
+
+        function clearCurrentProposals(){
+            proposalListTable.tBodies[0].innerHtml = "";
         }
 
         function getCurrentProposals() {
@@ -573,7 +609,7 @@
                     console.log("design proposal response");
                     console.log(response);
                     console.log(proposalListTable.tBodies[0]);
-                    proposalListTable.tBodies[0].innerHtml = "";
+                    clearCurrentProposals();
 
                     var proposalAddresses = response;
                     if (proposalAddresses.length < 1) {
@@ -612,15 +648,55 @@
 
         function setImageDisplayInnerHTML(iProposalContract, display) {
             iProposalContract.methods.getPropertyIPFS("PROPOSAL_IMAGE_IPFS_KEY").call({
-                    from: account
-                })
-                .then(function(response) {
-                    console.log(response);
-                    display.innerHTML = "<img src='" + ipfsRoot + response + "' class=\"w-75 h-75\" alt=\"\">";
-                })
-                .catch(function(err) {
-                    console.log(err);
-                });
+                from: account
+            })
+            .then(function(response) {
+                console.log(response);
+                display.innerHTML = "<img src='" + ipfsRoot + response + "' class=\"w-75 h-75\" alt=\"\">";
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+        }
+
+        async function approveSection(address, cost) {
+            console.log("cost : " + cost);
+            draftSectionMessage.innerHTML = await approve(address, cost);
+        }
+
+        async function approveVote(address, cost) {
+            console.log("cost : " + cost);
+            voteMessage.innerHTML = await approve(address, cost);
+        }
+
+        function appendSymbol(erc20Address, node)  {
+            iErc20 = getContract(iERC20MetadataAbi, erc20Address);
+            iErc20.methods.symbol().call({from : account})
+            .then(function(response){
+                console.log(response);
+                node.append(response);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+        }
+        
+
+        function setSectionCostDisplay(fee){
+            addSectionCostDisplay.innerHTML = ""
+            addSectionCostDisplay.append(text(fee + " "));
+        }
+
+        function setSectionCostSymbolDisplay(symbol) {
+            addSectionCostCurrencyDisplaySymbol.append(text(symbol));
+        }
+
+        function setSectionCostApprove(address, cost) {
+            addSectionApproveButtonDisplay.innerHTML = "<a id=\"add_section_approve_button\" href=\"javascript:approveSection('"+address+"',"+cost+")\" class=\"btn btn-warning ms-auto\">Approve Design Proposal</a> &nbsp;";
+        }
+
+        function setAddSectionButtonDisplay(proposalAddress){               
+            addSectionButtonDisplay.innerHTML = "<a id=\"add_section_button\" href=\"#\" onclick=\"addSection('"+proposalAddress+"')\" class=\"btn btn-danger ms-auto\" data-bs-dismiss=\"modal\">Add Section</a>"; 
         }
 
 
@@ -641,6 +717,15 @@
             imageCell.append(a);
             setImageDisplay(iProposalContract, imageSpan);
 
+            var daoCell = row.insertCell(); 
+            iProposalContract.methods.getPropertyIPFS("PROPOSAL_INFO_IPFS_KEY").call({from : account})
+            .then(function(response){
+                console.log(response);
+                setDAO(response, daoCell);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
 
             var b = ce("a");
             b.setAttribute("href", "javascript:displayProposal('" + proposalAddress + "')");
@@ -651,18 +736,30 @@
             di.setAttribute("class", "text");
 
 
+
             iProposalContract.methods.getTitle().call({
-                    from: account
-                })
-                .then(function(response) {
-                    console.log(response);
-                    b.appendChild(text(response));
-                    di.appendChild(b);
-                    titleCell.append(di);
-                })
-                .catch(function(err) {
-                    console.log(err);
-                });
+                from: account
+            })
+            .then(function(response) {
+                console.log(response);
+                b.appendChild(text(response));
+                di.appendChild(b);
+                titleCell.append(di);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+
+            var statusCell = row.insertCell();
+
+            iProposalContract.methods.getStatus().call({from : account})
+            .then(function(response){
+                console.log(response);
+                statusCell.append(text(response));
+            })
+            .catch(function(err) {
+                console.log(err);
+            }); 
 
             var targetSubmitDateCell = row.insertCell();
             addClassToElement(targetSubmitDateCell, "text-nowrap text-muted");
@@ -680,22 +777,29 @@
 
         var arrived = false;
 
+        function formatTimeForBlockchain(d) {
+            var v = d/1000;
+            console.log(v);
+            return BigInt(v);
+        }
+
         function createDraftProposal() {
             var ipfsPropertyNames = ["PROPOSAL_INFO_IPFS_KEY", "PROPOSAL_IMAGE_IPFS_KEY"];
             let ipfsPropertyValues = new Array(2);
 
             var uintPropertyNames = ["VOTE_CYCLE_TIME_KEY", "VOTE_FEE_KEY", "SECTION_FEE_KEY"];
             var uintPropertyValues = new Array(3);
-            uintPropertyValues[0] = pproposalVoteCycleTimeField.value * 60;
-            uintPropertyValues[1] = voteFeeField.value;
-            uintPropertyValues[2] = proposalSectionCreationFee.value;
+            uintPropertyValues[0] =  BigInt(pproposalVoteCycleTimeField.value * 60);
+            uintPropertyValues[1] = BigInt(voteFeeField.value);
+            uintPropertyValues[2] = BigInt(proposalSectionCreationFee.value);
 
             var dao = daoNameField.value;
             var owner = account;
             var title = proposalNameField.value;
             var backgroundDataLink = backgroundDataField.value;
             var currencyAddress = proposalCurrencyField.value;
-            var targetSubmissionDate = new Date(targetSubmissionDateField.value).getTime();
+            var t = new Date(targetSubmissionDateField.value).getTime();
+            var targetSubmissionDate = formatTimeForBlockchain(t);
             console.log(targetSubmissionDate);
 
             var proposalInfo = {};
@@ -715,9 +819,21 @@
                             console.log(response);
                             ipfsPropertyValues[1] = response[0].hash;
 
-                            create(owner,
+                            console.log(dao);
+                            console.log(owner);
+                            console.log(title);
+                            console.log(targetSubmissionDate);
+                            console.log(backgroundDataLink);
+                            console.log(currencyAddress);
+                            console.log(ipfsPropertyNames);
+                            console.log(ipfsPropertyValues);
+                            console.log(uintPropertyNames);
+                            console.log(uintPropertyValues);
+
+
+                            create(dao, owner,
                                 title,
-                                targetSubmissionDate,
+                                targetSubmissionDate ,
                                 backgroundDataLink, currencyAddress,
                                 ipfsPropertyNames, ipfsPropertyValues,
                                 uintPropertyNames, uintPropertyValues);
@@ -732,7 +848,8 @@
                 });
         }
 
-        function create(owner,
+        function create(dao, 
+            owner,
             title,
             targetSubmissionDate,
             backgroundDataLink,
@@ -741,8 +858,10 @@
             ipfsPropertyValues,
             uintPropertyNames,
             uintPropertyValues) {
+                
+            console.log(iDesignProposalContract);
 
-            iDesignProposalContract.methods.createProposal(owner,
+            iDesignProposalContract.methods.createProposal(dao, owner,
                     title,
                     targetSubmissionDate,
                     backgroundDataLink,
@@ -755,7 +874,7 @@
                 })
                 .then(function(response) {
                     console.log(response);
-                    displayProposalCreateHash.innerHTML = "PROPOSAL CREATED: " + response.blockHash;
+                    displayProposalCreateHash.innerHTML = "PROPOSAL CREATED: " + response.blockHash;                    
                     getCurrentProposals();
                 })
                 .catch(function(err) {
@@ -782,7 +901,10 @@
             selectedProposalContract = new web3.eth.Contract(iProposalAbi, proposalAddress);
             setImageDisplayInnerHTML(selectedProposalContract, proposalImageDisplay);
 
-            withdrawProposalButtonDisplay.innerHTML = "<a href=\"javascript:withdrawProposal(" + proposalAddress + ")\" class=\"btn btn-danger\">Withdraw Proposal</a>";
+            withdrawProposalButtonDisplay.innerHTML = "<a href=\"javascript:withdrawProposal('" + proposalAddress + "')\" class=\"btn btn-danger\">Withdraw Proposal</a>";
+            addProposalSectionButtonDisplay.innerHTML = "<a href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#modal-section\" class=\"btn btn-warning\">Add Section</a>"; 
+
+            setAddSectionButtonDisplay(proposalAddress);
 
             selectedProposalContract.methods.getTitle().call({
                     from: account
@@ -844,7 +966,8 @@
                 })
                 .then(function(response) {
                     console.log(response);
-                    var erc20Metadata = new web3.eth.Contract(iERC20MetadataAbi, response);
+                    var proposalCurrencyAddress = response; 
+                    var erc20Metadata = new web3.eth.Contract(iERC20MetadataAbi, proposalCurrencyAddress);
                     erc20Metadata.methods.symbol().call({
                             from: account
                         })
@@ -852,31 +975,42 @@
                             var symbol = response;
                             console.log("called symbol");
                             console.log(response);
-                            proposalCurrencyDisplay.innerHTML = response;
+                            setSectionCostSymbolDisplay(symbol);
+                            proposalCurrencyDisplay.innerHTML = symbol;
                             erc20Metadata.methods.decimals().call({
                                     from: account
                                 })
                                 .then(function(response) {
                                     console.log(response);
                                     var decimals = Number("1e" + response);
+
+                                    // vote fee
                                     selectedProposalContract.methods.getPropertyUINT("VOTE_FEE_KEY").call({
                                             from: account
                                         })
                                         .then(function(response) {
                                             console.log(response);
-                                            console.log("decimals");
-                                            sectionVoteFeeDisplay.innerHTML = (response / decimals) + " " + symbol;
+                                            var rawVoteFee = response; 
+                                            var displayVoteFee = (response / decimals)
+                                            sectionVoteFeeDisplay.innerHTML = displayVoteFee + " " + symbol;
                                         })
                                         .catch(function(err) {
                                             console.log(err);
                                         });
+
+                                    // section fee
                                     selectedProposalContract.methods.getPropertyUINT("SECTION_FEE_KEY").call({
                                             from: account
                                         })
                                         .then(function(response) {
                                             console.log(response);
-                                            console.log("decimals");
-                                            sectionCreationFeeDisplay.innerHTML = (response / decimals) + " " + symbol;
+                                            console.log("raw section fee : " + response);
+                                            var rawSectionFee = response; 
+                                            var displaySectionFee = (response / decimals);
+                                            sectionCreationFeeDisplay.innerHTML = "";
+                                            sectionCreationFeeDisplay.innerHTML = displaySectionFee + " " + symbol;
+                                            setSectionCostDisplay(displaySectionFee);
+                                            setSectionCostApprove(proposalCurrencyAddress, rawSectionFee)
                                         })
                                         .catch(function(err) {
                                             console.log(err);
@@ -916,7 +1050,25 @@
                     console.log(err);
                 });
             // load sections
-            loadProposalSections(selectedProposalContract);
+            loadProposalSections(selectedProposalContract, proposalAddress);
+        }
+
+        function setDAO(ipfsHash, node) {
+            console.log(" hash : " + ipfsHash);
+            fetch(ipfsRoot + ipfsHash)
+            .then(function(response) {
+                console.log(response);
+                response.json()
+                    .then(function(response) {
+                        console.log(response);
+                        var data = response;
+                        node.innerHTML = ""; 
+                        node.append(text(data.dao));
+                    })
+            })
+            .catch(function(err) {
+                console.log(err);
+            });  
         }
 
         function populateIPFSSourcedData(ipfsHash) {
@@ -938,25 +1090,42 @@
                 });
         }
 
+    
+
         function clearSectionEntry() {
             sectionTitleField.value = "";
             sectionContentField.value = "";
         }
 
-        function addSection() {
+
+
+        function addSection(proposalAddress) {                        
+            console.log("proposal : " + proposalAddress);
             ipfs.add(sectionContentField.value)
                 .then(function(response) {
+                    console.log("ipfs section hash : " + response);
                     console.log(response);
-                    var ipfsHash = response;
+                    var ipfsHash = response[0].hash;
+
+                    console.log(iProposalAbi);
+
+                    iProposalContract = getContract(iProposalAbi, proposalAddress);
+                    console.log(iProposalContract);
+                    console.log(sectionTitleField.value)
+                    console.log(ipfsHash);
                     iProposalContract.methods.addSection(sectionTitleField.value, ipfsHash).send({
                             from: account
                         })
                         .then(function(response) {
+                            console.log(response);
                             // clear section entry 
                             clearSectionEntry();
                             // reload sections 
-                            loadProposalSections(iProposalContract);
+                            loadProposalSections(iProposalContract, proposalAddress);
                             // mintSectionNFT(mintAddress, user, proposalSectionContent.value, proposalSectionTitle.value);
+                            proposalMessageDisplay.innerHTML = ""; 
+                            proposalMessageDisplay.innerHTML = response.blockHash + " ipfs hash : " + ipfsHash ;
+                            
                         })
                         .catch(function(err) {
                             console.log(err);
@@ -964,24 +1133,45 @@
                 })
                 .catch(function(err) {
                     console.log(err);
-                });
+                });            
         }
 
-        function loadProposalSections(selectedProposalContract) {
-            proposalSections.innerHTML = "";
+        function loadProposalSections(selectedProposalContract,proposalAddress) {
+            sectionDisplay.innerHTML = "";
             selectedProposalContract.methods.getSections().call({
                     from: account
                 })
                 .then(function(response) {
+                    console.log(response);
                     var sections = response;
                     if (sections.length < 1) {
-                        sectionDisplay.innerHTML = "NO SECTIONS TO DISPLAY - ADD SECTION TO BEGIN";
+                        sectionDisplay.innerHTML = "<center><b>NO SECTIONS TO DISPLAY - ADD SECTION TO BEGIN</b></center>";
                         return;
                     }
-                    for (var x = 0; x < sections.length; x++) {
-                        var section = sections[x];
-                        displaySection(section);
-                    }
+
+                    selectedProposalContract.methods.getFee("VOTE_FEE_KEY").call({from : account})
+                    .then(function(response){
+                        console.log(response)
+                        var voteFee = response; 
+                        selectedProposalContract.methods.getCurrencyAddress().call({ from : account})
+                        .then(function(response){
+                            console.log(response);
+                            proposalCurrencyAddress = response; 
+
+
+                            for (var x = 0; x < sections.length; x++) {
+                                var section = sections[x];
+                                displaySection(section, proposalAddress, proposalCurrencyAddress, voteFee);
+                            }
+                        })
+                        .catch(function(err) {
+                            console.log(err);
+                        });
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                    });
+
 
                 })
                 .catch(function(err) {
@@ -989,11 +1179,12 @@
                 });
         }
 
-        function displaySection(sectionAddress) {
+        function displaySection(sectionAddress, proposalAddress, proposalCurrencyAddress, voteFee) {
             iSectionContract = new web3.eth.Contract(iSectionAbi, sectionAddress);
 
             var holder = ce("div");
             holder.setAttribute("class", "col-md-3 col-lg-12");
+            sectionDisplay.append(holder);
 
             var card = ce("div");
             card.setAttribute("class", "card");
@@ -1027,9 +1218,15 @@
                     var ipfsHash = response;
                     fetch(ipfsRoot + ipfsHash)
                         .then(function(response) {
-                            console.log(response);
-                            p.appendChild(text(response));
-                            cardBody.append(p);
+                            console.log(response);      
+                            response.text()
+                            .then(function(response){
+                                var y = response; 
+                                console.log(y);
+                                p.appendChild(text(y));
+                                cardBody.append(p);
+                            })               
+                           
                         })
                         .catch(function(err) {
                             console.log(err);
@@ -1049,73 +1246,273 @@
             cardFooterHolder.setAttribute("class", "d-flex");
             cardFooter.append(cardFooterHolder);
 
-            var voteCostSpan = ce("span");
-            voteCostSpan.setAttribute("class", "mt-3 badge bg-cyan ms-auto mt-2 d-flex");
-
             var voteCycleTimeRemaining = ce("span");
             voteCycleTimeRemaining.setAttribute("class", "mt-3 badge bg-danger ms-auto mt-2 d-flex");
             iSectionContract.methods.getCycleTimeRemaining().call({
                     from: account
                 })
                 .then(function(response) {
+                    console.log(response);  
+                    var t = response;                   
                     var timeRemaining = formatTimeRemaining(response);
-                    var buttonClass = getTimeRemainingButtonClass(iSectionContract);
-                    voteCycleTimeRemaining.append(text("Time Remaining : " + timeRemaining));
-                    voteCycleTimeRemaining.append("class", buttonClass);
+                    if(t > 0){
+                        getTimeRemainingButtonClass(proposalAddress, iSectionContract, voteCycleTimeRemaining);
+                        voteCycleTimeRemaining.append(text("Time Remaining : " + timeRemaining));                        
+                        cardFooterHolder.append(voteCycleTimeRemaining);                        
+                        var span =  setVoteCostSpan(proposalCurrencyAddress, voteFee,  cardFooterHolder);                    
+                        appendSymbol(proposalCurrencyAddress, span);
+                        setSectionVoteApproveButton(proposalCurrencyAddress, sectionAddress, voteFee, cardFooterHolder);            
+                        setModalVoteButton(cardFooterHolder, sectionAddress);
+                    }
+                    else { 
+                        displayVoteResult(iSectionContract, cardFooterHolder);                                                
+                    }
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });                              
+        }
+
+        function setVoteCostSpan(currencyAddress, voteFee, cardFooterHolder){            
+            var voteCostSpan = ce("span");
+            formatCurrencyDecimals(currencyAddress, voteFee, voteCostSpan);
+            voteCostSpan.setAttribute("class", "mt-3 badge bg-cyan ms-auto mt-2 d-flex");            
+            cardFooterHolder.append(voteCostSpan);
+            return voteCostSpan; 
+        }
+        async function formatCurrencyDecimals(currencyAddress, v, span){
+            var iErc20 = getContract(iERC20MetadataAbi, currencyAddress); 
+            var formated = await iErc20.methods.decimals().call({from : account})
+            .then(function(response){
+                console.log(response);
+                var factor = Number("1e"+response);
+                console.log(factor);     
+                var result = (v / factor); 
+                span.appendChild(text(result + " "));
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+            return formated; 
+
+        }
+
+        function addHeader(header, value) {
+            var cell = header.insertCell();
+            var b = ce("b") ;
+            b.append(text(value))
+            cell.appendChild(b);
+        }
+
+        function displayVoteResult(iSectionContract, cardFooterHolder) {
+
+            var table = ce("table");
+            table.setAttribute("style", "padding : 15px");
+            table.setAttribute("width","100%");
+            cardFooterHolder.append(table);
+            var header = table.insertRow(); 
+            addHeader(header, "Originator");
+            addHeader(header, "Total Votes Cast");
+            addHeader(header, "Votes For");
+            addHeader(header, "Votes Against");
+            addHeader(header, "Vote Result");
+            addHeader(header, "Section Status");
+           
+            var row = table.insertRow();
+            
+            var originatorCell = row.insertCell(); 
+            var totalVotesCell = row.insertCell(); 
+
+            iSectionContract.methods.getOriginator().call({from : account})
+            .then(function(response){
+                console.log(response);
+                var os = ce("span");
+                os.setAttribute("class", "mt-3 badge bg-primary-lt");
+                os.append(text(response));
+                originatorCell.append(os);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+
+
+            
+
+            iSectionContract.methods.getVotes().call({from : account})
+            .then(function(response){
+                console.log(response);
+                var votes = response; 
+                var totalVotesSpan = ce("span");
+                var c = ce("center");
+                c.append(text(votes.length));
+                totalVotesSpan.append(c); 
+                totalVotesCell.append(totalVotesSpan);
+                if(votes.length > 0) {
+                    totalVotesSpan.setAttribute("class", "mt-3 badge bg-primary-lt");
+                    var upvoteCount = 0; 
+                    for(var x = 0; x < votes.length; x++) {
+                        var vote = votes[x];
+                        if(vote.upVote) {
+                            upvoteCount++;
+                        }
+                    }
+                    var totalVotesForCell = row.insertCell();             
+          
+                    var greenSpan = ce("span");
+                    greenSpan.setAttribute("class", "mt-3 badge bg-green-lt");
+                    greenSpan.append(text(upvoteCount));
+                    
+                    totalVotesForCell.append(greenSpan);
+
+                    var totalVotesAgainstCell = row.insertCell(); 
+                    var redSpan = ce("span");
+                    redSpan.setAttribute("class","mt-3 badge bg-pink-lt");
+                    redspan.append(text(votes.length - upvoteCount));
+                    
+                    totalVotesAgainstCell.append(redSpan);
+                }
+                else { 
+                    totalVotesSpan.setAttribute("class", "mt-3 badge bg-black-lt");
+                    var noVotesCell = row.insertCell();
+                    noVotesCell.setAttribute("colspan","2");
+                    var cv = ce("center");
+                    cv.setAttribute("class","mt-3 badge bg-dark-lt");
+                    cv.append(text("NO VOTES CAST"));
+                    noVotesCell.append(cv);
+                }
+
+                var resultCell = row.insertCell();
+                iSectionContract.methods.getVoteResult().call({from : account})
+                .then(function(response){
+                    console.log(response)
+                    var result = response;
+                    var resultSpan = ce("span");
+                    resultCell.append(resultSpan);
+                    if(result === "ACCEPTED")  {
+                        resultSpan.setAttribute("class", "mt-3 badge bg-success");
+                        resultSpan.append(text(result));                    
+                    }
+                    else{ 
+                        resultSpan.setAttribute("class", "mt-3 badge bg-danger");
+                        resultSpan.append(text(result)); 
+                    }
                 })
                 .catch(function(err) {
                     console.log(err);
                 });
 
-            var approveButton = ce("a");
-            approveButton.setAttribute("href", "javascript:approve(" + proposalCurrencyAddress + "," + voteCost + ")");
-            approveButton.setAttribute("class", "btn btn-warning ms-auto");
+                var statusCell = row.insertCell(); 
+                iSectionContract.methods.getStatus().call({from : account})
+                .then(function(response){
+                    console.log(response);
+                    var status = response; 
+                    var ss = ce("span");
+                    ss.append(text(status));
+                    var badge = ""; 
+                    if(status === "WITHDRAWN"){
+                        badge = "mt-3 badge bg-dark"
+                    }
+                    if(status === "OPEN"){
+                        badge = "mt-3 badge bg-green-lt"
 
+                    }
+                    if(status === "CLOSED"){
+                        badge = "mt-3 badge bg-pink-lt"
+                    }
+
+                    ss.setAttribute("class", badge);
+                    statusCell.append(ss);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+
+
+
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+        }
+
+
+        function setSectionVoteApproveButton(proposalCurrencyAddress, sectionAddress, voteFee, cardFooterHolder) {
+            var approveButton = ce("a");
+            approveButton.setAttribute("href", "javascript:approve('" + proposalCurrencyAddress + "','"+sectionAddress+"'," + voteFee + ")");
+            approveButton.setAttribute("class", "btn btn-warning ms-auto");
+            approveButton.append(text("Approve Section To Vote"));
+            cardFooterHolder.append(approveButton); 
+        }
+
+        function setModalVoteButton(cardFooterHolder, sectionAddress) {
             var voteButton = ce("a");
             voteButton.setAttribute("href", "#");
             voteButton.setAttribute("class", "btn btn-danger ms-auto");
             voteButton.setAttribute("data-bs-toggle", "modal");
             voteButton.setAttribute("data-bs-target", "#modal-vote");
+            voteButton.setAttribute("onclick", "setVoteModal('"+sectionAddress+"')");
             voteButton.appendChild(text("Vote"));
-
-
-            /* 
-            <div class="col-md-3 col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Section Title</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis sed suscipit velit vitae voluptatem.</p>
-                    </div>
-                    <!-- Card footer -->
-                    <div class="card-footer">
-                        <div class="d-flex">
-                            
-                            <span id="vote_cost" class="mt-3 badge bg-cyan ms-auto mt-2 d-flex">Vote Cost: 1 USDC</span>
-                            <span id="vote_cycle_time_remaining" class="mt-3 badge bg-danger ms-auto mt-2 d-flex">Time Remaining: 10 mins</span>
-                                
-                            <a href="#" class="btn btn-warning ms-auto">Approve</a>
-                            <a href="#" class="btn btn-danger ms-auto" data-bs-toggle="modal" data-bs-target="#modal-vote">Vote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            */
+            cardFooterHolder.append(voteButton);
         }
 
-        function approve(address, amount) {
 
+        function getTimeRemainingButtonClass(proposalAddress, iSectionContract, voteCycleTimeRemaining){
+            iProposalContract = getContract(iProposalAbi, proposalAddress);
+            iProposalContract.methods.getPropertyUINT("VOTE_CYCLE_TIME_KEY").call({from : account})
+            .then(function(response){
+                console.log(response);
+                var voteCycleTime = response; 
+                iSectionContract.methods.getCycleTimeRemaining().call({ from : account})
+                .then(function(response){
+                    console.log(response)
+                    var buttonClass = "btn btn-primary";
+                    var timeRemaining = response; 
+                    if((timeRemaining / voteCycleTime) > 0.7){
+                        buttonClass = "btn btn-success";
+                    }
+                    if((timeRemaining / voteCycleTime) < 0.7){
+                        buttonClass = "btn btn-warning";
+                    }
+                    if((timeRemaining / voteCycleTime) < 0.3){
+                        buttonClass = "btn btn-danger";
+                    }   
+                    voteCycleTimeRemaining.setAttribute("class", buttonClass);
+                })                
+                .catch(function(err) {
+                    console.log(err);
+                });
+                
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
         }
 
-        function buildOpen() {
-
+        function setVoteModal(sectionAddress) {
+            upVoteButton.setAttribute("onclick","vote('"+sectionAddress+"', true)");
+            downVoteButton.setAttribute("onclick","vote('"+sectionAddress+"', false)")
         }
 
-        function buildClosed() {
-
-        }
-
-        function buildWithdrawn() {
-
+        function vote(sectionAddress, vote) {
+            var comment = voteComment.value;
+            console.log(comment);
+            ipfs.add(comment)
+                .then(function(response) {
+                    console.log("ipfs section hash : " + response);
+                    console.log(response);
+                    var ipfsHash = response[0].hash
+                    iSectionContract = getContract(iSectionAbi, sectionAddress);
+                    iSectionContract.methods.vote(new Boolean(vote),ipfsHash).send({from : account})
+                    .then(function(response){
+                        console.log(response)
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                    });
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
         }
 
 
@@ -1177,6 +1574,43 @@
             month: 'numeric',
             day: 'numeric'
         };
+
+
+        function formatTimeRemaining(v)  {
+            if(v < 60){
+                return v + " secs"
+            }
+            if(v < 3600) {
+                return (v /60) + " mins";
+            }
+            if(v < (3600 *24)){
+                return v / 3600 + " hours";
+            }
+        }
+
+        async function approve(address, amount) {
+            console.log(" approve token address : " + address);
+            console.log(" amount : " + amount);
+            iErc20 = getContract(iERC20MetadataAbi, address); 
+
+            console.log("idpa : " + iDesignProposalAddress);
+
+            var res = await iErc20.methods.approve(iDesignProposalAddress, BigInt(amount)).send({from : account})
+                                .then(function(response){
+                                    console.log(response);
+                                    return response.blockHash; 
+                                })
+                                .catch(function(err) {
+                                    console.log(err);
+                                    return err.message; 
+                                });
+            return res; 
+        }
+
+
+        function getContract(abi, address) {
+            return new web3.eth.Contract(abi, address);
+        }
 
         function formatDate(date) {
             return date.toLocaleDateString("en-UK", dateOptions);

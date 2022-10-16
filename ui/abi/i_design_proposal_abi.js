@@ -2,6 +2,11 @@ iDesignProposalAbi = [
 	{
 		"inputs": [
 			{
+				"internalType": "string",
+				"name": "_daoName",
+				"type": "string"
+			},
+			{
 				"internalType": "address",
 				"name": "_owner",
 				"type": "address"
@@ -60,6 +65,38 @@ iDesignProposalAbi = [
 	},
 	{
 		"inputs": [],
+		"name": "getDaos",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "_daos",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "getProposalByOwner",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "_proposals",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "getProposalFee",
 		"outputs": [
 			{
@@ -83,6 +120,44 @@ iDesignProposalAbi = [
 			{
 				"internalType": "address[]",
 				"name": "_proposals",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_contributor",
+				"type": "address"
+			}
+		],
+		"name": "getProposalsByContributor",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "_proposals",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_daoName",
+				"type": "string"
+			}
+		],
+		"name": "getProposalsByDAO",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "_daos",
 				"type": "address[]"
 			}
 		],

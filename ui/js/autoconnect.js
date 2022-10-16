@@ -26,30 +26,6 @@ const buffer = window.IpfsHttpClientLite.Buffer;
 console.log("got ipfs: " + ipfs);
 
 // chain connect 
-/*
-var chain = {};
-chain.name = 'Celo (Alfajores Testnet)';
-chain.id =  44787;
-chain.rpcUrls = ['https://alfajores-forno.celo-testnet.org'];
-chain.blockExplorerUrls = ['https://alfajores-blockscout.celo-testnet.org'];
-var nativeCurrency = {}; 
-nativeCurrency.name = 'CELO';
-nativeCurrency.decimals = 18;
-nativeCurrency.symbol = 'CELO';
-chain.nativeCurrency = nativeCurrency; 
-*/
-/*
-var chain = {};
-chain.name = 'Optimistic Ethereum Testnet Kovan (OKOV)';
-chain.id =  69;
-chain.rpcUrls = ['https://kovan.optimism.io/'];
-chain.blockExplorerUrls = ['https://kovan-optimistic.etherscan.io/'];
-var nativeCurrency = {}; 
-nativeCurrency.name = 'KOR';
-nativeCurrency.decimals = 18;
-nativeCurrency.symbol = 'KOR';
-chain.nativeCurrency = nativeCurrency; 
-*/
 
 var chain = {};
 chain.name = 'Sepolia Test Network';
@@ -115,6 +91,7 @@ function disconnect() {
 
 function loadWait() { 
     console.log("load count :: " + loadCount);
+	console.log("load time out : " + pageloadTimeout);
     setTimeout(loadPageData, pageloadTimeout);
     console.log("loadCount :: " + loadCount);  
 }  
