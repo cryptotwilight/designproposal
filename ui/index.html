@@ -557,6 +557,11 @@
         const draftSectionMessage                   = ge("draft_section_message");
         // end modal 
 
+        // vote modal 
+        const upVoteButton                          = ge("up_vote_button");
+        const downVoteButton                        = ge("down_vote_button");
+        const voteComment                           = ge("vote_comment");
+
         const proposalMessageDisplay          = ge("proposal_message_display");
         const sectionDisplay                 = ge("proposal_section_display");
      
@@ -1248,6 +1253,12 @@
 
             var voteCycleTimeRemaining = ce("span");
             voteCycleTimeRemaining.setAttribute("class", "mt-3 badge bg-danger ms-auto mt-2 d-flex");
+
+            setFooter(proposalAddress, iSectionContract, proposalCurrencyAddress, sectionAddress, voteCycleTimeRemaining, cardFooterHolder, voteFee)
+                              
+        }
+
+        function setFooter(proposalAddress, iSectionContract, proposalCurrencyAddress, sectionAddress, voteCycleTimeRemaining, cardFooterHolder, voteFee) {
             iSectionContract.methods.getCycleTimeRemaining().call({
                     from: account
                 })
@@ -1270,8 +1281,9 @@
                 })
                 .catch(function(err) {
                     console.log(err);
-                });                              
+                });
         }
+
 
         function setVoteCostSpan(currencyAddress, voteFee, cardFooterHolder){            
             var voteCostSpan = ce("span");
