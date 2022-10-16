@@ -1,3 +1,5 @@
+<img src="https://github.com/cryptotwilight/designproposal/blob/cec0a407ab99306bf4e1f3d54a92c643a4b3608c/media/De%20Prop%20Logo%20(2).png" alt="Design Proposal" width="40" height="40">
+
 # Design Proposal 
 Design proposal is a new way for DAOs to develop their proposals taking advantage of their decentralized nature. The purpose of this dApp is to allow for the DAO 
 enable contributors to a certain topic to assemble a proposal that is based on micro votes and independent contributions. At the end of the proposal creation period 
