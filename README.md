@@ -32,8 +32,8 @@ The useable version of the project is deployed on the Sepolia Testnet at the add
 
 |Address                        | Contract                                 |
 |-------------------------------|------------------------------------------|
-|DesignProposal                 |0x1dA4D4C7f512b6C19166F015E8C68e6baC864594|
-|ProposalFactory                |0xFf6A82Ea712bFdc99EE389388DDaD6851086e773|
+|DesignProposal                 |0xA4DefF1EfB17fEcae7ef3f3CF3573972Cf13490f|
+|ProposalFactory                |0x6187Fd46B7F8BE9dfA7abd1cA1ad2c8CF3a11F69|
 |SectionFactory                 |0x4c93e25c58Ab63936765D9190F7447b565DF0F4D|
 |OpenRegister                   |0x25661cca52F1Df6D143411E8216a79555de12F1E|
 |OpenRolesDerivativesAdmin      |0xa352Bd6b449e29bBdC5e994dcf11e268B6e69A16|
@@ -42,6 +42,7 @@ The useable version of the project is deployed on the Sepolia Testnet at the add
 |OpenRolesAdmin                 |0x2B704Fa8C2E481f6DECf8D0F16CecfE3d76952E4|
 |**Test USDC**                  |0x3E1Da782E575889F1675eb59aF8396232716B5Ce|
 
+For the latest deployed contracts check the OpenRegister. 
 
 **UI**
 <br/>
