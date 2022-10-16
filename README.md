@@ -30,9 +30,9 @@ The useable version of the project is deployed on the Sepolia Testnet at the add
 
 |Address                        | Contract                                 |
 |-------------------------------|------------------------------------------|
-|DesignProposal                 |0x00292Eb1078a3deB797931446ADAb2d1f5e8E3Ce|
-|ProposalFactory                |0xe36864259f5F199884081c429BeF7F4De452D1A7|
-|SectionFactory                 |0xa607447b276ECB8750eC6eaC006cefC0cfaDaDd2|
+|DesignProposal                 |0x1dA4D4C7f512b6C19166F015E8C68e6baC864594|
+|ProposalFactory                |0xFf6A82Ea712bFdc99EE389388DDaD6851086e773|
+|SectionFactory                 |0x4c93e25c58Ab63936765D9190F7447b565DF0F4D|
 |OpenRegister                   |0x25661cca52F1Df6D143411E8216a79555de12F1E|
 |OpenRolesDerivativesAdmin      |0xa352Bd6b449e29bBdC5e994dcf11e268B6e69A16|
 |OpenRolesDerivativeTypesAdmin  |0x8168B7ddf5Ec7110E93A937D21a2f5B8b12dB824|
