@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: GPL-3.0
-// Design Proposal Contracts supported by Protocol Labs Next Step Grant
-
-pragma solidity ^0.8.15;
-
+// SPDX-License-Identifier: Apache 2.0
+pragma solidity ^0.8.17;
+/** 
+  * @author cryptotwilight 
+  */
 import "https://github.com/Block-Star-Logic/open-roles/blob/b05dc8c6990fd6ba4f0b189e359ef762118d6cbe/blockchain_ethereum/solidity/v2/contracts/core/OpenRolesSecureCore.sol";
 import "https://github.com/Block-Star-Logic/open-roles/blockchain_ethereum/solidity/v2/contracts/interfaces/IOpenRolesManaged.sol";
 
@@ -11,7 +11,9 @@ import "https://github.com/Block-Star-Logic/open-register/blob/0959ffa2af2ca2cb3
 import "../interface/ISectionFactory.sol";
 import "./Section.sol";
 
-
+/**
+ * @dev ISectionFactory implementation 
+ */
 contract SectionFactory is ISectionFactory, OpenRolesSecureCore, IOpenRolesManaged { 
 
     using LOpenUtilities for string; 
@@ -19,7 +21,7 @@ contract SectionFactory is ISectionFactory, OpenRolesSecureCore, IOpenRolesManag
     IOpenRegister registry;     
 
     string name     = "RESERVED_DESIGN_PROPOSAL_SECTION_FACTORY_CORE"; 
-    uint256 version = 2; 
+    uint256 version = 3; 
 
     string registryCA        = "RESERVED_OPEN_REGISTER_CORE";  
     string roleManagerCA     = "RESERVED_OPEN_ROLES_CORE";

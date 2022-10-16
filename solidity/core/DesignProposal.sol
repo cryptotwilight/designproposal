@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: GPL-3.0
-// Design Proposal Contracts supported by Protocol Labs Next Step Grant
-
+// SPDX-License-Identifier: Apache 2.0
 pragma solidity ^0.8.15;
-
+/** 
+  * @author cryptotwilight 
+  */
 import "https://github.com/Block-Star-Logic/open-libraries/blob/703b21257790c56a61cd0f3d9de3187a9012e2b3/blockchain_ethereum/solidity/V1/libraries/LOpenUtilities.sol";
 
 import "https://github.com/Block-Star-Logic/open-roles/blob/b05dc8c6990fd6ba4f0b189e359ef762118d6cbe/blockchain_ethereum/solidity/v2/contracts/core/OpenRolesSecureCore.sol";
@@ -15,18 +15,21 @@ import "../interface/IDPManagement.sol";
 import "../interface/IProposalFactory.sol";
 import "../interface/IProposal.sol";
 
+/**
+ * @dev IDesignProposal implementation 
+ */
 contract DesignProposal is OpenRolesSecureCore, IDesignProposal, IDPManagement, IOpenVersion, IOpenRolesManaged { 
         
         using LOpenUtilities for address; 
 
         string constant name = "RESERVED_DESIGN_PROPOSAL_CORE";
-        uint256 constant version = 2; 
+        uint256 constant version = 3; 
 
         string constant registryCA        = "RESERVED_OPEN_REGISTER_CORE";  
         string constant proposalFactoryCA = "RESERVED_DESIGN_PROPOSAL_FACTORY_CORE";
         string constant roleManagerCA     = "RESERVED_OPEN_ROLES_CORE";
 
-        string constant openAdminRole    = "OPEN_ADMIN_ROLE";
+        string constant openAdminRole     = "RESERVED_OPEN_ADMIN_ROLE";
         string constant businessAdminRole = "BUSINESS_ADMIN_ROLE";
         string [] roleNames = [openAdminRole, businessAdminRole];
 
@@ -120,7 +123,7 @@ contract DesignProposal is OpenRolesSecureCore, IDesignProposal, IDPManagement, 
                                 string memory _backgroundDataLink, 
                                 address _currencyAddress, 
                                 string [] memory _IPFSpropertyNames, string [] memory _IPFSpropertyValues, 
-                                string [] memory _UINTPropertyNames, uint256 [] memory _uintPropertyValues ) payable external returns (address _proposal){
+                                string [] memory _uintPropertyNames, uint256 [] memory _uintPropertyValues ) payable external returns (address _proposal){
                                 
                                 ProposalSeed memory _seed = ProposalSeed({
                                                                             id                     : getProposalId(),
@@ -131,7 +134,7 @@ contract DesignProposal is OpenRolesSecureCore, IDesignProposal, IDPManagement, 
                                                                             currencyAddress        : _currencyAddress,                                                                        
                                                                             IPFSpropertyNames      : _IPFSpropertyNames,  // PROPOSAL_INFO_IPFS_KEY, PROPOSAL_IMAGE_IPFS_KEY, 
                                                                             IPFSpropertyValues     : _IPFSpropertyValues,
-                                                                            UINTPropertyNames      : _UINTPropertyNames,   // VOTE_CYCLE_TIME_KEY, VOTE_FEE_KEY, SECTION_FEE_KEY
+                                                                            uintPropertyNames      : _uintPropertyNames,   // VOTE_CYCLE_TIME_KEY, VOTE_FEE_KEY, SECTION_FEE_KEY
                                                                             uintPropertyValues     : _uintPropertyValues
                                                                         });
             _proposal = proposalFactory.createProposal(_seed);                                                    

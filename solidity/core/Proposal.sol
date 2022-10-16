@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: GPL-3.0
-// Design Proposal Contracts supported by Protocol Labs Next Step Grant
-
-pragma solidity ^0.8.15;
-
+// SPDX-License-Identifier: Apache 2.0
+pragma solidity ^0.8.17;
+/** 
+  * @author cryptotwilight 
+  */
 import "https://github.com/Block-Star-Logic/open-libraries/blob/703b21257790c56a61cd0f3d9de3187a9012e2b3/blockchain_ethereum/solidity/V1/libraries/LOpenUtilities.sol";
 
 import "https://github.com/Block-Star-Logic/open-register/blob/0959ffa2af2ca2cb3e5dd0f7b495e831cca2d506/blockchain_ethereum/solidity/V1/interfaces/IOpenRegister.sol";
@@ -14,12 +14,16 @@ import "../interface/ISection.sol";
 import "../interface/ISectionFactory.sol";
 import "../interface/IDPManagement.sol";
 
+/**
+ * @dev IProposal impelementation 
+ */
+
 contract Proposal is IProposal, IOpenVersion { 
 
     using LOpenUtilities for string; 
 
     string constant name                = "PROPOSAL";
-    uint256 constant version            = 3; 
+    uint256 constant version            = 5; 
 
     string constant sectionFactoryCA    = "RESERVED_DESIGN_PROPOSAL_SECTION_FACTORY_CORE";
 
@@ -63,8 +67,8 @@ contract Proposal is IProposal, IOpenVersion {
         for(uint256 x = 0; x < _seed.IPFSpropertyNames.length; x++){
             ipfsPropertyByName[_seed.IPFSpropertyNames[x]] = _seed.IPFSpropertyValues[x];
         }
-        for(uint256 y = 0; y < _seed.UINTPropertyNames.length; y++){
-            uintPropertyByName[_seed.UINTPropertyNames[y]] = _seed.uintPropertyValues[y];
+        for(uint256 y = 0; y < _seed.uintPropertyNames.length; y++){
+            uintPropertyByName[_seed.uintPropertyNames[y]] = _seed.uintPropertyValues[y];
         }
     }
 
@@ -106,7 +110,7 @@ contract Proposal is IProposal, IOpenVersion {
         return uintPropertyByName[_name];
     }
 
-    function getPropertyIPFS(string memory _propertyName) view external returns (string memory _ipfsHash){ // image, additional data; 
+    function getPropertyIPFS(string memory _propertyName) view external returns (string memory _ipfsHash){ // PROPOSAL_INFO_IPFS_KEY, PROPOSAL_IMAGE_IPFS_KEY
         return ipfsPropertyByName[_propertyName];
     }
 
@@ -114,7 +118,7 @@ contract Proposal is IProposal, IOpenVersion {
         return currencyAddress; 
     }
 
-    function getPropertyUINT(string memory _propertyName) view external returns (uint256 _propertyValue){ // vote cycle, vote stake, proposed funding amount
+    function getPropertyUINT(string memory _propertyName) view external returns (uint256 _propertyValue){ // 
         return uintPropertyByName[_propertyName];
     }
 
@@ -146,6 +150,9 @@ contract Proposal is IProposal, IOpenVersion {
         for(uint256 x = 0; x < sections.length; x++){
             ISection section_ = ISection(sections[x]);
             string memory result_ = section_.getVoteResult(); 
+            if(result_.isEqual("STILL_VOTING")) {
+                return "STILL_VOTING";
+            }
             if(result_.isEqual("WITHDRAWN")){
                 continue;
             }

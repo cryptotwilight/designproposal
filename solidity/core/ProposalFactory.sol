@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: GPL-3.0
-// Design Proposal Contracts supported by Protocol Labs Next Step Grant
-
+// SPDX-License-Identifier: Apache 2.0
 pragma solidity ^0.8.17;
-
+/** 
+  * @author cryptotwilight 
+  */
 import "https://github.com/Block-Star-Logic/open-roles/blob/b05dc8c6990fd6ba4f0b189e359ef762118d6cbe/blockchain_ethereum/solidity/v2/contracts/core/OpenRolesSecureCore.sol";
 import "https://github.com/Block-Star-Logic/open-roles/blockchain_ethereum/solidity/v2/contracts/interfaces/IOpenRolesManaged.sol";
 
@@ -11,13 +11,16 @@ import "https://github.com/Block-Star-Logic/open-register/blob/0959ffa2af2ca2cb3
 import  "../interface/IProposalFactory.sol";
 import "./Proposal.sol";
 
+/**
+ * @dev IProposalFactory implementation 
+ */
 contract ProposalFactory is OpenRolesSecureCore, IProposalFactory, IOpenVersion, IOpenRolesManaged { 
 
 
     IOpenRegister registry;     
 
     string constant name     = "RESERVED_DESIGN_PROPOSAL_FACTORY_CORE"; 
-    uint256 constant version = 2; 
+    uint256 constant version = 3; 
 
     string constant registryCA        = "RESERVED_OPEN_REGISTER_CORE";  
     string constant roleManagerCA     = "RESERVED_OPEN_ROLES_CORE";
